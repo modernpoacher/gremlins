@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/display-name": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

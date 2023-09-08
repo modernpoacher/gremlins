@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@modernpoacher/gremlins/gremlins/text <Gremlin /> With additional props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`@modernpoacher/gremlins/gremlins/text <Gremlin /> With required props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;

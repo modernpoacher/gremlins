@@ -1,0 +1,7 @@
+@import "design-system/layouts";
+
+#storybook-root {
+  @include design-system;
+
+  margin: 0 auto;
+}
