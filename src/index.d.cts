@@ -1,49 +1,18 @@
 declare namespace FieldGremlinsTypes {
   export type OnChangeType = () => void
-
-  export type AnswerDefinitionType = {
-    answer: {
-      value: string | string[]
-    }
-    changeAnswer: {
-      text: string
-      href: string
-      visuallyHiddenText?: string
-    }
-  }
-
-  export type ErrorDefinitionType = {
-    type: string,
-    uri: string,
-    params: {
-      expectedType: string
-    }
-  }
-
-  export type ComponentsType = {}
-
-  export type FieldChangeType = {
-    text: string,
-    href: string
-  }
-
-  export type FieldErrorType = {
-    text: string,
-    href: string
-  }
 }
 
 declare module '@modernpoacher/gremlins/gremlins' {
   import React from 'react'
 
-  export type FieldGremlinProps = {
-    id: string,
-    name: string,
-    required: boolean,
-    disabled: boolean,
-    readOnly: boolean,
-    placeholder: string,
-    onChange: FieldGremlinsTypes.OnChangeType,
+  export interface FieldGremlinProps {
+    id: string
+    name: string
+    required: boolean
+    disabled: boolean
+    readOnly: boolean
+    placeholder: string
+    onChange: FieldGremlinsTypes.OnChangeType
     fieldRef: object
   }
 
@@ -99,46 +68,46 @@ declare module '@modernpoacher/gremlins/gremlins/textarea' {
 }
 
 declare module '@modernpoacher/gremlins/components/common/disabled' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function Disabled(): React.JSX.Element
+  export default function Disabled (): React.JSX.Element
 }
 
 declare module '@modernpoacher/gremlins/components/common/readonly' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function ReadOnly(): React.JSX.Element
+  export default function ReadOnly (): React.JSX.Element
 }
 
 declare module '@modernpoacher/gremlins/components/common/required' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function Required(): React.JSX.Element
+  export default function Required (): React.JSX.Element
 }
 
 declare module '@modernpoacher/gremlins/components/common/text-content' {
-  import React from 'react'
+  import type React from 'react'
 
-  export type TextContentProps = {
+  export interface TextContentProps {
     textContent: string
   }
 
-  export default function TextContent(props: TextContentProps): React.JSX.Element
+  export default function TextContent (props: TextContentProps): React.JSX.Element
 }
 
 declare module '@modernpoacher/gremlins/components/field' {
   import React from 'react'
 
-  export type FieldProps = {
-    id: string,
-    name: string,
-    required: boolean,
-    disabled: boolean,
-    readOnly: boolean,
-    tabIndex: number,
-    accessKey: string,
-    placeholder: string,
-    onChange: FieldGremlinsTypes.OnChangeType,
+  export interface FieldProps {
+    id: string
+    name: string
+    required: boolean
+    disabled: boolean
+    readOnly: boolean
+    tabIndex: number
+    accessKey: string
+    placeholder: string
+    onChange: FieldGremlinsTypes.OnChangeType
     fieldRef: object
   }
 
@@ -195,16 +164,14 @@ declare module '@modernpoacher/gremlins/gremlins/textarea/field' {
 
 declare namespace GroupGremlinsTypes {
   export type OnChangeType = () => void
-
-  export type ComponentsType = {}
 }
 
 declare module '@modernpoacher/gremlins/components/group' {
   import React from 'react'
 
-  export type GroupProps = {
-    onChange: GroupGremlinsTypes.OnChangeType,
-    groupRef: object,
+  export interface GroupProps {
+    onChange: GroupGremlinsTypes.OnChangeType
+    groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
 
@@ -226,10 +193,10 @@ declare module '@modernpoacher/gremlins/gremlins/fieldset' {
 declare module '@modernpoacher/gremlins/gremlins' {
   import React from 'react'
 
-  export type GroupGremlinProps = {
-    title: string,
-    onChange: GroupGremlinsTypes.OnChangeType,
-    groupRef: object,
+  export interface GroupGremlinProps {
+    title: string
+    onChange: GroupGremlinsTypes.OnChangeType
+    groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
 
