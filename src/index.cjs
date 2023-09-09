@@ -18,6 +18,7 @@ const RadioGremlin = require('./gremlins/radio/index.cjs')
 const SelectGremlin = require('./gremlins/select/index.cjs')
 const TextGremlin = require('./gremlins/text/index.cjs')
 const TextareaGremlin = require('./gremlins/textarea/index.cjs')
+const FieldsetGremlin = require('./gremlins/fieldset/index.cjs')
 
 module.exports.CheckboxGremlin = CheckboxGremlin
 module.exports.EmailGremlin = EmailGremlin
@@ -27,3 +28,4 @@ module.exports.RadioGremlin = RadioGremlin
 module.exports.SelectGremlin = SelectGremlin
 module.exports.TextGremlin = TextGremlin
 module.exports.TextareaGremlin = TextareaGremlin
+module.exports.FieldsetGremlin = FieldsetGremlin

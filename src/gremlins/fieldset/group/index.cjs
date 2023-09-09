@@ -1,6 +1,6 @@
 require('@babel/register')({
   ignore: [
-    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
+    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/gremlins|@modernpoacher\/sprockets)/
   ]
 })
 
@@ -8,7 +8,7 @@ const debug = require('debug')
 
 const log = debug('@modernpoacher/gremlins/gremlins/fieldset/group')
 
-log('`sprockets` is awake')
+log('`gremlins` is awake')
 
 const {
   default: component

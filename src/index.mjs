@@ -8,6 +8,7 @@ import RadioGremlin from './gremlins/radio/index.cjs'
 import SelectGremlin from './gremlins/select/index.cjs'
 import TextGremlin from './gremlins/text/index.cjs'
 import TextareaGremlin from './gremlins/textarea/index.cjs'
+import FieldsetGremlin from './gremlins/fieldset/index.cjs'
 
 const log = debug('@modernpoacher/gremlins')
 
@@ -21,6 +22,7 @@ export { default as RadioGremlin } from './gremlins/radio/index.cjs'
 export { default as SelectGremlin } from './gremlins/select/index.cjs'
 export { default as TextGremlin } from './gremlins/text/index.cjs'
 export { default as TextareaGremlin } from './gremlins/textarea/index.cjs'
+export { default as FieldsetGremlin } from './gremlins/fieldset/index.cjs'
 
 export default {
   CheckboxGremlin,
@@ -30,5 +32,6 @@ export default {
   RadioGremlin,
   SelectGremlin,
   TextGremlin,
-  TextareaGremlin
+  TextareaGremlin,
+  FieldsetGremlin
 }
