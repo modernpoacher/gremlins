@@ -10,10 +10,6 @@ export default {
     placeholder: {
       control: 'text',
       description: 'placeholder'
-    },
-    errorMessage: {
-      control: 'text',
-      description: 'errorMessage'
     }
   }
 }

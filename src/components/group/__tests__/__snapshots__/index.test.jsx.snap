@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@modernpoacher/gremlins/components/group <Group /> With additional props renders 1`] = `
+<fieldset
+  className="group"
+  onChange={[MockFunction]}
+/>
+`;
+
+exports[`@modernpoacher/gremlins/components/group <Group /> With required props renders 1`] = `
+<fieldset
+  className="group"
+/>
+`;

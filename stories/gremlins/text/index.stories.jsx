@@ -10,19 +10,15 @@ export default {
     placeholder: {
       control: 'text',
       description: 'placeholder'
-    },
-    errorMessage: {
-      control: 'text',
-      description: 'errorMessage'
     }
   }
 }
 
 export function Value (args) {
   return (
-  <TextState value='Value'>
-    <TextGremlin {...args} />
-  </TextState>
+    <TextState value='Value'>
+      <TextGremlin {...args} />
+    </TextState>
   )
 }
 

@@ -1,4 +1,4 @@
-declare namespace gremlinsTypes {
+declare namespace FieldGremlinsTypes {
   export type OnChangeType = () => void
 
   export type AnswerDefinitionType = {
@@ -36,64 +36,64 @@ declare namespace gremlinsTypes {
 declare module '@modernpoacher/gremlins/gremlins' {
   import React from 'react'
 
-  export type GremlinProps = {
+  export type FieldGremlinProps = {
     id: string,
     name: string,
     required: boolean,
     disabled: boolean,
     readOnly: boolean,
     placeholder: string,
-    onChange: gremlinsTypes.OnChangeType,
+    onChange: FieldGremlinsTypes.OnChangeType,
     fieldRef: object
   }
 
-  export default class Gremlin extends React.Component<GremlinProps> {}
+  export class FieldGremlin extends React.Component<FieldGremlinProps> {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/checkbox' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class CheckboxGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/email' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class EmailGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/number' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class NumberGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/password' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class PasswordGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/radio' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class RadioGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/select' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class SelectGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/text' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class TextGremlin extends Gremlin {}
 }
 
 declare module '@modernpoacher/gremlins/gremlins/textarea' {
-  import Gremlin from '@modernpoacher/gremlins/gremlins'
+  import { FieldGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
 
   export default class TextareaGremlin extends Gremlin {}
 }
@@ -138,7 +138,7 @@ declare module '@modernpoacher/gremlins/components/field' {
     tabIndex: number,
     accessKey: string,
     placeholder: string,
-    onChange: gremlinsTypes.OnChangeType,
+    onChange: FieldGremlinsTypes.OnChangeType,
     fieldRef: object
   }
 
@@ -193,6 +193,49 @@ declare module '@modernpoacher/gremlins/gremlins/textarea/field' {
   export default class TextareaField extends Field {}
 }
 
+declare namespace GroupGremlinsTypes {
+  export type OnChangeType = () => void
+
+  export type ComponentsType = {}
+}
+
+declare module '@modernpoacher/gremlins/components/group' {
+  import React from 'react'
+
+  export type GroupProps = {
+    onChange: GroupGremlinsTypes.OnChangeType,
+    groupRef: object,
+    children: React.JSX.Element | React.JSX.Element[]
+  }
+
+  export default class Group extends React.Component<GroupProps> {}
+}
+
+declare module '@modernpoacher/gremlins/gremlins/fieldset/group' {
+  import Group from '@modernpoacher/gremlins/components/group'
+
+  export default class FieldsetGroup extends Group {}
+}
+
+declare module '@modernpoacher/gremlins/gremlins/fieldset' {
+  import { GroupGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
+
+  export default class FieldsetGremlin extends Gremlin {}
+}
+
+declare module '@modernpoacher/gremlins/gremlins' {
+  import React from 'react'
+
+  export type GroupGremlinProps = {
+    title: string,
+    onChange: GroupGremlinsTypes.OnChangeType,
+    groupRef: object,
+    children: React.JSX.Element | React.JSX.Element[]
+  }
+
+  export class GroupGremlin extends React.Component<GroupGremlinProps> {}
+}
+
 declare module '@modernpoacher/gremlins' {
   export { default as CheckboxGremlin } from '@modernpoacher/gremlins/gremlins/checkbox'
   export { default as EmailGremlin } from '@modernpoacher/gremlins/gremlins/email'
@@ -202,4 +245,5 @@ declare module '@modernpoacher/gremlins' {
   export { default as SelectGremlin } from '@modernpoacher/gremlins/gremlins/select'
   export { default as TextGremlin } from '@modernpoacher/gremlins/gremlins/text'
   export { default as TextareaGremlin } from '@modernpoacher/gremlins/gremlins/textarea'
+  export { default as FieldsetGremlin } from '@modernpoacher/gremlins/gremlins/fieldset'
 }

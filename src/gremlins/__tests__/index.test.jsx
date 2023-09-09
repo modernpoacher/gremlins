@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import Field from '@modernpoacher/gremlins/components/field'
 
-import Gremlin, { ValueGremlin, CheckGremlin } from '@modernpoacher/gremlins/gremlins'
+import { FieldGremlin as Gremlin, ValueGremlin, CheckGremlin } from '@modernpoacher/gremlins/gremlins'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -254,7 +254,6 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
-            title: 'MOCK CHANGE TITLE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,

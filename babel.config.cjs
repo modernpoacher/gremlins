@@ -70,6 +70,8 @@ const plugins = [
         '@modernpoacher/gremlins/gremlins/text': './src/gremlins/text/index.jsx',
         '@modernpoacher/gremlins/gremlins/textarea/field': './src/gremlins/textarea/field/index.jsx',
         '@modernpoacher/gremlins/gremlins/textarea': './src/gremlins/textarea/index.jsx',
+        '@modernpoacher/gremlins/gremlins/fieldset/group': './src/gremlins/fieldset/group/index.jsx',
+        '@modernpoacher/gremlins/gremlins/fieldset': './src/gremlins/fieldset/index.jsx',
         '@modernpoacher/gremlins/gremlins': './src/gremlins/index.jsx',
         '@modernpoacher/gremlins/components/common/disabled': './src/components/common/disabled/index.jsx',
         '@modernpoacher/gremlins/components/common/readonly': './src/components/common/readonly/index.jsx',
@@ -98,7 +100,7 @@ module.exports = (api) => {
     presets,
     plugins,
     ignore: [
-      /node_modules\/(?!@modernpoacher\/gremlins|@modernpoacher\/sprockets)/
+      /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/gremlins|@modernpoacher\/sprockets)/
     ]
   }
 }

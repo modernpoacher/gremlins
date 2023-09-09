@@ -126,11 +126,14 @@
     "./gremlins/text": "./src/gremlins/text/index.cjs",
     "./gremlins/textarea/field": "./src/gremlins/textarea/field/index.cjs",
     "./gremlins/textarea": "./src/gremlins/textarea/index.cjs",
+    "./gremlins/fieldset/group": "./src/gremlins/fieldset/group/index.cjs",
+    "./gremlins/fieldset": "./src/gremlins/fieldset/index.cjs",
     "./gremlins": "./src/gremlins/index.cjs",
     "./components/common/disabled": "./src/components/common/disabled/index.cjs",
     "./components/common/readonly": "./src/components/common/readonly/index.cjs",
     "./components/common/required": "./src/components/common/required/index.cjs",
     "./components/common/text-content": "./src/components/common/text-content/index.cjs",
-    "./components/field": "./src/components/field/index.cjs"
+    "./components/field": "./src/components/field/index.cjs",
+    "./components/group": "./src/components/group/index.cjs"
   }
 }

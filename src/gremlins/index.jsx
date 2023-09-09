@@ -1,11 +1,20 @@
 /**
- * Gremlin component
+ * GroupGremlin component
+ *
+ * @typedef {import('@modernpoacher/gremlins/gremlins').GroupGremlinProps} GroupGremlinProps
  */
+/**
+ * FieldGremlin component
+ *
+ * @typedef {import('@modernpoacher/gremlins/gremlins').FieldGremlinProps} FieldGremlinProps
+ */
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Field from '@modernpoacher/gremlins/components/field'
+import Group from '@modernpoacher/gremlins/components/group'
 
 function onChange () {
   /* */
@@ -15,7 +24,7 @@ function onClick () {
   /* */
 }
 
-export default class Gremlin extends Component {
+export class FieldGremlin extends Component {
   getClassName () {
     const {
       required,
@@ -35,6 +44,10 @@ export default class Gremlin extends Component {
     return id || name
   }
 
+  /**
+   * @param {FieldGremlinProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       (props.name !== this.props.name) ||
@@ -91,7 +104,7 @@ export default class Gremlin extends Component {
   }
 }
 
-Gremlin.propTypes = {
+FieldGremlin.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
@@ -104,14 +117,14 @@ Gremlin.propTypes = {
   })
 }
 
-Gremlin.defaultProps = {
+FieldGremlin.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
   onChange
 }
 
-export class ValueGremlin extends Gremlin {
+export class ValueGremlin extends FieldGremlin {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
@@ -121,16 +134,16 @@ export class ValueGremlin extends Gremlin {
 }
 
 ValueGremlin.propTypes = {
-  ...Gremlin.propTypes,
+  ...FieldGremlin.propTypes,
   value: PropTypes.string,
   defaultValue: PropTypes.string
 }
 
 ValueGremlin.defaultProps = {
-  ...Gremlin.defaultProps
+  ...FieldGremlin.defaultProps
 }
 
-export class CheckGremlin extends Gremlin {
+export class CheckGremlin extends FieldGremlin {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
@@ -141,13 +154,73 @@ export class CheckGremlin extends Gremlin {
 }
 
 CheckGremlin.propTypes = {
-  ...Gremlin.propTypes,
+  ...FieldGremlin.propTypes,
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   onClick: PropTypes.func
 }
 
 CheckGremlin.defaultProps = {
-  ...Gremlin.defaultProps,
+  ...FieldGremlin.defaultProps,
   onClick
+}
+
+export class GroupGremlin extends Component {
+  getClassName () {
+    return 'gremlin'
+  }
+
+  /**
+   * @param {GroupGremlinProps} props
+   * @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
+    return (
+      (props.children !== this.props.children) ||
+      (props.onChange !== this.props.onChange)
+    )
+  }
+
+  renderGroup () {
+    const {
+      onChange,
+      groupRef,
+      children
+    } = this.props
+
+    return (
+      <Group
+        onChange={onChange}
+        groupRef={groupRef}>
+        {children}
+      </Group>
+    )
+  }
+
+  render () {
+    const className = this.getClassName()
+
+    return (
+      <div className={className}>
+        {this.renderGroup()}
+      </div>
+    )
+  }
+}
+
+GroupGremlin.propTypes = {
+  onChange: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ]),
+  groupRef: PropTypes.shape({
+    current: PropTypes.shape().isRequired
+  })
+}
+
+GroupGremlin.defaultProps = {
+  onChange
 }

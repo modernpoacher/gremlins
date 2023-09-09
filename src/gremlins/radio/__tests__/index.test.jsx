@@ -150,7 +150,6 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
             value: 'MOCK CHANGE VALUE',
-            title: 'MOCK CHANGE TITLE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
