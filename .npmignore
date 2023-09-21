@@ -35,3 +35,12 @@ stories
 
 # Shell
 nvm.sh
+transform.sh
+
+# TypeScript
+tsconfig.json
+jsconfig.json
+
+# Webpack
+webpack.config.mjs
+
