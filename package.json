@@ -14,7 +14,7 @@
     "email": "modernpoacher@modernpoacher.com",
     "url": "https://modernpoacher.com"
   },
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "node": ">=18.5.0"
   },
