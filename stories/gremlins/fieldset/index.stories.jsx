@@ -35,32 +35,66 @@ export function Default () {
   return (
     <FieldsetGremlin>
       <CheckboxState checked>
-        <CheckboxGremlin id='checkbox' />
+        <CheckboxGremlin
+          id='checkbox'
+          name='checkbox'
+        />
       </CheckboxState>
       <EmailState value='email@email.com'>
-        <EmailGremlin id='email' />
+        <EmailGremlin
+          id='email'
+          name='email'
+        />
       </EmailState>
       <NumberState value={1}>
-        <NumberGremlin id='number' />
+        <NumberGremlin
+          id='number'
+          name='number'
+        />
       </NumberState>
       <PasswordState value='password'>
-        <PasswordGremlin id='password' />
+        <PasswordGremlin
+          id='password'
+          name='password'
+        />
       </PasswordState>
       <RadioState value='value'>
-        <RadioGremlin id='radio' value='value' />
+        <RadioGremlin
+          id='radio-1'
+          name='radio'
+          value='value'
+        />
+        <RadioGremlin
+          id='radio-2'
+          name='radio'
+         value='value'
+         />
+        <RadioGremlin
+          id='radio-3'
+          name='radio'
+          value='value'
+        />
       </RadioState>
       <SelectState value='one'>
-        <SelectGremlin>
+        <SelectGremlin
+          id='select'
+          name='select'>
           <option value='one'>One</option>
           <option value='two'>Two</option>
           <option value='three'>Three</option>
         </SelectGremlin>
       </SelectState>
       <TextState value='Value'>
-        <TextGremlin id='text' />
+        <TextGremlin
+          id='text'
+          name='text'
+         />
       </TextState>
       <TextareaState value='Value'>
-        <TextareaGremlin id='textarea' />
+        <TextareaGremlin
+          id='textarea'
+          name='textarea'
+        />
       </TextareaState>
     </FieldsetGremlin>
   )
