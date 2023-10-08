@@ -5,7 +5,7 @@ exports[`@modernpoacher/gremlins/gremlins/select/field <Field /> With additional
   className="MOCK CLASSNAME"
   disabled={true}
   id="MOCK ID"
-  multiple={false}
+  multiple={true}
   name="MOCK NAME"
   onChange={[Function]}
   readOnly={true}

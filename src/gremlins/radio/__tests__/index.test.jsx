@@ -130,6 +130,8 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -208,7 +210,7 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId')
+        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -218,7 +220,7 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
           .toBeCalled()
       })
 
-      xit('renders `<Field />`', () => {
+      it('renders `<Field />`', () => {
         return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',

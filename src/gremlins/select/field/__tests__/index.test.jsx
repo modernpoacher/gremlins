@@ -48,6 +48,7 @@ describe('@modernpoacher/gremlins/gremlins/select/field', () => {
             required
             disabled
             readOnly
+            multiple
           />
         )
 

@@ -310,7 +310,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId')
+        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -320,7 +320,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           .toBeCalled()
       })
 
-      xit('renders `<Field />`', () => {
+      it('renders `<Field />`', () => {
         return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',

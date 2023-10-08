@@ -144,7 +144,7 @@ describe('@modernpoacher/gremlins/gremlins/password', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId')
+        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -154,21 +154,19 @@ describe('@modernpoacher/gremlins/gremlins/password', () => {
           .toBeCalled()
       })
 
-      xit('renders `<Field />`', () => {
+      it('renders `<Field />`', () => {
         return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: 'MOCK VALUE',
-            defaultValue: undefined,
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: expect.any(Function),
-            fieldRef: undefined
+            onChange: expect.any(Function)
           }, {})
       })
     })

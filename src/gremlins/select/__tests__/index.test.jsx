@@ -72,7 +72,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           <Gremlin
             name='MOCK NAME'
             id='MOCK ID'
-            value='MOCK VALUE'
+            value={[]}
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -123,6 +123,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
         <Gremlin
           name='MOCK NAME'
           id='MOCK ID'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -151,6 +152,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
+            value: expect.any(Array),
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -170,6 +172,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: expect.any(Array),
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
@@ -190,6 +193,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
         <Gremlin
           name='MOCK NAME'
           id='MOCK ID'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -197,8 +201,9 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}
-        />
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Gremlin>
       )
 
       let instance
@@ -213,7 +218,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId')
+        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -223,11 +228,12 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           .toBeCalled()
       })
 
-      xit('renders `<Field />`', () => {
+      it('renders `<Field />`', () => {
         return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: expect.any(Array),
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
@@ -235,7 +241,8 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
             multiple: true,
-            onChange: expect.any(Function)
+            onChange: expect.any(Function),
+            children: 'MOCK CHILDREN'
           }, {})
       })
     })

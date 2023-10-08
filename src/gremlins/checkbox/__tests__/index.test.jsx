@@ -72,7 +72,6 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
           <Gremlin
             name='MOCK NAME'
             id='MOCK ID'
-            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -146,7 +145,7 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId')
+        getIdSpy = jest.spyOn(Gremlin.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -156,7 +155,7 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
           .toBeCalled()
       })
 
-      xit('renders `<Field />`', () => {
+      it('renders `<Field />`', () => {
         return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
