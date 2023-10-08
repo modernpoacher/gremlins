@@ -15,6 +15,8 @@ jest.mock('@modernpoacher/gremlins/gremlins', () => {
 
     getId () { }
 
+    shouldComponentUpdate () { }
+
     renderField () { }
 
     render () {
@@ -31,7 +33,6 @@ jest.mock('@modernpoacher/gremlins/gremlins', () => {
   return {
     __esModule: true,
     ValueGremlin: class ValueGremlin extends MockGremlin { },
-    CheckGremlin: class CheckGremlin extends MockGremlin { },
     default: MockGremlin
   }
 })
@@ -78,6 +79,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
+            multiple
             onChange={jest.fn()}
           />
         )
@@ -116,6 +118,73 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
       })
     })
 
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Gremlin
+          name='MOCK NAME'
+          id='MOCK ID'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          multiple
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Gremlin>
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(ValueGremlin.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER',
+            multiple: true,
+            children: 'MOCK CHANGE CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER',
+            children: 'MOCK CHILDREN',
+            multiple: true,
+            onChange: expect.any(Function)
+          }))
+            .toBe(false)
+        })
+      })
+    })
+
     describe('`renderField()`', () => {
       const component = (
         <Gremlin
@@ -127,6 +196,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}
         />
       )
@@ -164,6 +234,7 @@ describe('@modernpoacher/gremlins/gremlins/select', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            multiple: true,
             onChange: expect.any(Function)
           }, {})
       })

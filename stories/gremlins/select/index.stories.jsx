@@ -57,3 +57,53 @@ DefaultValue.args = {
   id: 'select',
   name: 'select'
 }
+
+export function MultipleValue (args) {
+  return (
+    <SelectState value={['one', 'three']}>
+      <SelectGremlin multiple {...args}>
+        <option value='one'>One</option>
+        <option value='two'>Two</option>
+        <option value='three'>Three</option>
+        <option value='four'>Four</option>
+        <option value='five'>Five</option>
+        <option value='six'>Six</option>
+      </SelectGremlin>
+    </SelectState>
+  )
+}
+
+MultipleValue.args = {
+  required: false,
+  disabled: false,
+  readOnly: false,
+  tabIndex: 0,
+  accessKey: 'A',
+  id: 'select',
+  name: 'select'
+}
+
+export function MultipleDefaultValue (args) {
+  return (
+    <SelectState defaultValue={['one', 'three']}>
+      <SelectGremlin multiple {...args}>
+        <option value='one'>One</option>
+        <option value='two'>Two</option>
+        <option value='three'>Three</option>
+        <option value='four'>Four</option>
+        <option value='five'>Five</option>
+        <option value='six'>Six</option>
+      </SelectGremlin>
+    </SelectState>
+  )
+}
+
+MultipleDefaultValue.args = {
+  required: false,
+  disabled: false,
+  readOnly: false,
+  tabIndex: 0,
+  accessKey: 'A',
+  id: 'select',
+  name: 'select'
+}

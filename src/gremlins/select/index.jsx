@@ -13,6 +13,7 @@ export default class SelectGremlin extends ValueGremlin {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
+      (props.multiple !== this.props.multiple) ||
       (props.children !== this.props.children)
     )
   }
@@ -42,6 +43,7 @@ export default class SelectGremlin extends ValueGremlin {
       tabIndex,
       accessKey,
       placeholder,
+      multiple,
       fieldRef,
       children
     } = this.props
@@ -58,6 +60,7 @@ export default class SelectGremlin extends ValueGremlin {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
+        multiple={multiple}
         onChange={this.handleChange}
         fieldRef={fieldRef}>
         {children}
@@ -68,6 +71,19 @@ export default class SelectGremlin extends ValueGremlin {
 
 SelectGremlin.propTypes = {
   ...ValueGremlin.propTypes,
+  multiple: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(
@@ -77,5 +93,6 @@ SelectGremlin.propTypes = {
 }
 
 SelectGremlin.defaultProps = {
-  ...ValueGremlin.defaultProps
+  ...ValueGremlin.defaultProps,
+  multiple: false
 }
