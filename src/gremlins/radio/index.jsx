@@ -87,6 +87,7 @@ export default class Radio extends CheckGremlin {
 
 Radio.propTypes = {
   ...CheckGremlin.propTypes,
+  id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
 }
 

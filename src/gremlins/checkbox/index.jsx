@@ -2,6 +2,7 @@
  * CheckboxGremlin component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckGremlin } from '@modernpoacher/gremlins/gremlins'
@@ -34,6 +35,7 @@ export default class CheckboxGremlin extends CheckGremlin {
 
     const {
       name,
+      value,
       checked,
       defaultChecked,
       required,
@@ -49,6 +51,7 @@ export default class CheckboxGremlin extends CheckGremlin {
       <Field
         id={id}
         name={name}
+        value={value}
         checked={checked}
         defaultChecked={defaultChecked}
         required={required}
@@ -76,7 +79,8 @@ export default class CheckboxGremlin extends CheckGremlin {
 }
 
 CheckboxGremlin.propTypes = {
-  ...CheckGremlin.propTypes
+  ...CheckGremlin.propTypes,
+  value: PropTypes.string.isRequired
 }
 
 CheckboxGremlin.defaultProps = {

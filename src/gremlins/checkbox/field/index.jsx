@@ -2,6 +2,7 @@
  * CheckboxField component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckField } from '@modernpoacher/gremlins/components/field'
@@ -13,10 +14,10 @@ export default class CheckboxField extends CheckField {
 
   render () {
     const {
+      checked,
       id,
       name,
-      checked,
-      defaultChecked,
+      value,
       required,
       disabled,
       readOnly,
@@ -27,13 +28,43 @@ export default class CheckboxField extends CheckField {
 
     const className = this.getClassName()
 
+    if (typeof checked === 'boolean') {
+      return (
+        <>
+          <input
+            checked={checked}
+            id={id}
+            name={name}
+            value={value}
+            required={required}
+            disabled={disabled}
+            readOnly={readOnly}
+            tabIndex={tabIndex}
+            accessKey={accessKey}
+            onClick={this.handleClick}
+            onChange={this.handleChange}
+            className={className}
+            type='checkbox'
+            ref={fieldRef}
+          />
+          <label htmlFor={id}>
+            {String.fromCodePoint(8203)}
+          </label>
+        </>
+      )
+    }
+
+    const {
+      defaultChecked
+    } = this.props
+
     return (
       <>
         <input
+          defaultChecked={defaultChecked}
           id={id}
           name={name}
           checked={checked}
-          defaultChecked={defaultChecked}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -54,7 +85,8 @@ export default class CheckboxField extends CheckField {
 }
 
 CheckboxField.propTypes = {
-  ...CheckField.propTypes
+  ...CheckField.propTypes,
+  value: PropTypes.string.isRequired
 }
 
 CheckboxField.defaultProps = {

@@ -16,8 +16,8 @@ export default {
 
 export function Checked (args) {
   return (
-    <CheckboxState checked>
-      <CheckboxGremlin {...args} />
+    <CheckboxState value='value'>
+      <CheckboxGremlin {...args} value='value' />
     </CheckboxState>
   )
 }
@@ -34,8 +34,8 @@ Checked.args = {
 
 export function DefaultChecked (args) {
   return (
-    <CheckboxState defaultChecked>
-      <CheckboxGremlin {...args} />
+    <CheckboxState defaultValue='value'>
+      <CheckboxGremlin {...args} value='value' />
     </CheckboxState>
   )
 }

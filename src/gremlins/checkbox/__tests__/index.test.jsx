@@ -43,7 +43,10 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
   describe('<Gremlin />', () => {
     describe('With required props', () => {
       const component = (
-        <Gremlin name='MOCK NAME' />
+        <Gremlin
+          name='MOCK NAME'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -72,6 +75,7 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
           <Gremlin
             name='MOCK NAME'
             id='MOCK ID'
+            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -95,7 +99,10 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
         jest.spyOn(CheckGremlin.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Gremlin name='MOCK NAME' />
+          <Gremlin
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (
@@ -122,6 +129,7 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
         <Gremlin
           name='MOCK NAME'
           id='MOCK ID'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -160,6 +168,7 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: 'MOCK VALUE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,

@@ -43,7 +43,10 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
   describe('<Gremlin />', () => {
     describe('With required props', () => {
       const component = (
-        <Gremlin name='MOCK NAME' value='MOCK VALUE' />
+        <Gremlin
+          name='MOCK NAME'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -96,7 +99,10 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
         jest.spyOn(CheckGremlin.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Gremlin name='MOCK NAME' value='MOCK VALUE' />
+          <Gremlin
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (
