@@ -24,8 +24,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
     describe('With required props', () => {
       const component = (
         <Field
-          id='MOCK ID'
           name='MOCK NAME'
+          id='MOCK ID'
           value='MOCK VALUE'
         />
       )
@@ -74,8 +74,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
       it('renders', () => {
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
             required
             disabled
@@ -96,8 +96,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
           />
         )
@@ -127,8 +127,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
             onClick={MOCK_ONCLICK}
           />
@@ -152,8 +152,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
             onChange={MOCK_ONCHANGE}
           />
