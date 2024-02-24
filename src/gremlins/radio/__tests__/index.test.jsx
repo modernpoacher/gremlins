@@ -45,6 +45,7 @@ describe('@modernpoacher/gremlins/gremlins/radio', () => {
       const component = (
         <Gremlin
           name='MOCK NAME'
+          id='MOCK ID'
           value='MOCK VALUE'
         />
       )

@@ -27,7 +27,10 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
-        <Field name='MOCK NAME' />
+        <Field
+          name='MOCK NAME'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -47,8 +50,9 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
       it('renders', () => {
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
+            value='MOCK VALUE'
             required
             disabled
             readOnly
@@ -67,7 +71,10 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
         jest.spyOn(CheckField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Field name='MOCK NAME' />
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (
