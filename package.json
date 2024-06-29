@@ -1,6 +1,6 @@
 {
   "name": "@modernpoacher/gremlins",
-  "version": "0.0.173",
+  "version": "0.0.176",
   "description": "Gremlins",
   "keywords": [
     "Gremlins",
@@ -58,8 +58,8 @@
     "@storybook/react": "7.6.20",
     "@storybook/react-webpack5": "7.6.20",
     "@types/react": "^18.3.3",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
     "babel-plugin-module-resolver": "^5.0.2",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.37.1",
@@ -84,7 +84,7 @@
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "storybook": "7.6.20",
-    "webpack": "^5.92.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },
   "imports": {
