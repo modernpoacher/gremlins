@@ -227,7 +227,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Gremlin
@@ -239,7 +239,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -277,7 +277,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -390,7 +390,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <ValueGremlin
@@ -403,7 +403,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           readOnly
           value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -429,7 +429,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           return expect(instance.shouldComponentUpdate({
             ...instance.props,
             value: 'MOCK VALUE',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -491,7 +491,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <CheckGremlin
@@ -504,7 +504,7 @@ describe('@modernpoacher/gremlins/gremlins', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 

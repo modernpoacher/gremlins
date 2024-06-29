@@ -7,6 +7,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '@modernpoacher/gremlins/common'
+
 export default class Group extends Component {
   getClassName () {
     return 'group'
@@ -25,7 +29,7 @@ export default class Group extends Component {
 
   render () {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       groupRef,
       children
     } = this.props

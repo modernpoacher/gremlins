@@ -4,11 +4,11 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/gremlins/components/group'
-import Group from '../index.jsx'
+import Group from '@modernpoacher/gremlins/gremlins/fieldset/group'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/gremlins/fieldset/group', () => {
+describe('@modernpoacher/gremlins/gremlins/fieldset/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

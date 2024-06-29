@@ -60,11 +60,11 @@ describe('@modernpoacher/gremlins/components/group', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Group
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -89,7 +89,7 @@ describe('@modernpoacher/gremlins/components/group', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })

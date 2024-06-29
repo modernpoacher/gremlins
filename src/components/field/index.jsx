@@ -4,13 +4,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-function onChange () {
-  /* */
-}
-
-function onClick () {
-  /* */
-}
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from '@modernpoacher/gremlins/common'
 
 export default class Field extends Component {
   getClassName () {
@@ -33,9 +30,9 @@ export default class Field extends Component {
   render () {
     const {
       id,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
@@ -77,7 +74,7 @@ Field.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 /**
@@ -92,7 +89,7 @@ export class ValueField extends Field {
   }
 
   handleChange = ({ target: { value } }) => {
-    const { onChange } = this.props
+    const { onChange = DEFAULT_HANDLE_CHANGE } = this.props
 
     onChange(value)
   }
@@ -121,13 +118,13 @@ export class CheckField extends Field {
   }
 
   handleClick = ({ target: { checked } }) => {
-    const { onClick } = this.props
+    const { onClick = DEFAULT_HANDLE_CLICK } = this.props
 
     onClick(checked)
   }
 
   handleChange = ({ target: { checked } }) => {
-    const { onChange } = this.props
+    const { onChange = DEFAULT_HANDLE_CHANGE } = this.props
 
     onChange(checked)
   }
@@ -142,5 +139,5 @@ CheckField.propTypes = {
 
 CheckField.defaultProps = {
   ...Field.defaultProps,
-  onClick
+  onClick: DEFAULT_HANDLE_CLICK
 }

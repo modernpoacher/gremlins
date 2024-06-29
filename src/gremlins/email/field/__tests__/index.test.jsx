@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import { ValueField } from '@modernpoacher/gremlins/components/field'
-import Field from '../index.jsx'
+import Field from '@modernpoacher/gremlins/gremlins/email/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

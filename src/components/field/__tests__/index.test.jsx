@@ -1,7 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Field, { ValueField, CheckField } from '@modernpoacher/gremlins/components/field'
+import Field, {
+  ValueField,
+  CheckField
+} from '@modernpoacher/gremlins/components/field'
 
 describe('@modernpoacher/gremlins/components/field', () => {
   describe('<Field />', () => {
@@ -69,7 +72,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Field
@@ -81,7 +84,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -122,7 +125,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -244,10 +247,10 @@ describe('@modernpoacher/gremlins/components/field', () => {
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <ValueField name='MOCK NAME' onChange={MOCK_ONCHANGE} />
+          <ValueField name='MOCK NAME' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -257,7 +260,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith('MOCK VALUE')
       })
     })
@@ -336,8 +339,8 @@ describe('@modernpoacher/gremlins/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-      const MOCK_ONCLICK = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
+      const MOCK_ON_CLICK = jest.fn()
 
       const component = (
         <CheckField
@@ -350,8 +353,8 @@ describe('@modernpoacher/gremlins/components/field', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
-          onClick={MOCK_ONCLICK}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -380,7 +383,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
             ...instance.props,
             checked: true,
-            onClick: MOCK_ONCLICK
+            onClick: MOCK_ON_CLICK
           }))
             .toBe(false)
         })
@@ -389,10 +392,10 @@ describe('@modernpoacher/gremlins/components/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ONCLICK = jest.fn()
+        const MOCK_ON_CLICK = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onClick={MOCK_ONCLICK} />
+          <CheckField name='MOCK NAME' onClick={MOCK_ON_CLICK} />
         )
 
         const instance = (
@@ -402,17 +405,17 @@ describe('@modernpoacher/gremlins/components/field', () => {
 
         instance.handleClick({ target: { checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCLICK)
+        return expect(MOCK_ON_CLICK)
           .toBeCalledWith('MOCK CHECKED')
       })
     })
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onChange={MOCK_ONCHANGE} />
+          <CheckField name='MOCK NAME' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -422,7 +425,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
 
         instance.handleChange({ target: { checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith('MOCK CHECKED')
       })
     })

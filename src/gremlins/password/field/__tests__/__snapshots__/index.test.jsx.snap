@@ -15,7 +15,10 @@ exports[`@modernpoacher/gremlins/gremlins/password/field <Field /> With addition
 exports[`@modernpoacher/gremlins/gremlins/password/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
+  readOnly={false}
+  required={false}
   type="password"
 />
 `;

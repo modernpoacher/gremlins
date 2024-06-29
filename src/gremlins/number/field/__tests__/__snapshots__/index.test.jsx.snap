@@ -15,7 +15,10 @@ exports[`@modernpoacher/gremlins/gremlins/number/field <Field /> With additional
 exports[`@modernpoacher/gremlins/gremlins/number/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
+  readOnly={false}
+  required={false}
   type="number"
 />
 `;

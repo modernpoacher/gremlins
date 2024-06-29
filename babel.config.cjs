@@ -47,6 +47,7 @@ const plugins = [
         /**
          *  Storybook
          */
+        '@modernpoacher/gremlins/common': './src/common/index.mjs',
         '@modernpoacher/gremlins/gremlins/checkbox/field': './src/gremlins/checkbox/field/index.jsx',
         '@modernpoacher/gremlins/gremlins/checkbox': './src/gremlins/checkbox/index.jsx',
         '@modernpoacher/gremlins/gremlins/email/field': './src/gremlins/email/field/index.jsx',

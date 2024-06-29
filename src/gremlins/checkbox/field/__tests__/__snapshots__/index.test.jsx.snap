@@ -25,9 +25,12 @@ exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With required
 [
   <input
     className="MOCK CLASSNAME"
+    disabled={false}
     name="MOCK NAME"
     onChange={[Function]}
     onClick={[Function]}
+    readOnly={false}
+    required={false}
     type="checkbox"
   />,
   <label>

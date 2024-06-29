@@ -26,10 +26,13 @@ exports[`@modernpoacher/gremlins/gremlins/radio/field <Field /> With required pr
 [
   <input
     className="MOCK CLASSNAME"
+    disabled={false}
     id="MOCK ID"
     name="MOCK NAME"
     onChange={[Function]}
     onClick={[Function]}
+    readOnly={false}
+    required={false}
     type="radio"
     value="MOCK VALUE"
   />,

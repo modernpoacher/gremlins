@@ -13,23 +13,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import Field from '@modernpoacher/gremlins/components/field'
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from '@modernpoacher/gremlins/common'
+
+import Field, {
+  ValueField,
+  CheckField
+} from '@modernpoacher/gremlins/components/field'
+
 import Group from '@modernpoacher/gremlins/components/group'
-
-function onChange () {
-  /* */
-}
-
-function onClick () {
-  /* */
-}
 
 export class FieldGremlin extends Component {
   getClassName () {
     const {
-      required,
-      disabled,
-      readOnly
+      required = false,
+      disabled = false,
+      readOnly = false
     } = this.props
 
     return classnames('gremlin', { required, disabled, readOnly })
@@ -67,13 +68,13 @@ export class FieldGremlin extends Component {
 
     const {
       name,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       fieldRef
     } = this.props
 
@@ -121,7 +122,7 @@ FieldGremlin.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 export class ValueGremlin extends FieldGremlin {
@@ -129,6 +130,37 @@ export class ValueGremlin extends FieldGremlin {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)
+    )
+  }
+
+  renderField () {
+    const id = this.getId()
+
+    const {
+      name,
+      required = false,
+      disabled = false,
+      readOnly = false,
+      tabIndex,
+      accessKey,
+      placeholder,
+      onChange = DEFAULT_HANDLE_CHANGE,
+      fieldRef
+    } = this.props
+
+    return (
+      <ValueField
+        id={id}
+        name={name}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
+        placeholder={placeholder}
+        onChange={onChange}
+        fieldRef={fieldRef}
+      />
     )
   }
 }
@@ -151,6 +183,39 @@ export class CheckGremlin extends FieldGremlin {
       (props.onClick !== this.props.onClick)
     )
   }
+
+  renderField () {
+    const id = this.getId()
+
+    const {
+      name,
+      required = false,
+      disabled = false,
+      readOnly = false,
+      tabIndex,
+      accessKey,
+      placeholder,
+      onChange = DEFAULT_HANDLE_CHANGE,
+      onClick = DEFAULT_HANDLE_CLICK,
+      fieldRef
+    } = this.props
+
+    return (
+      <CheckField
+        id={id}
+        name={name}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
+        placeholder={placeholder}
+        onChange={onChange}
+        onClick={onClick}
+        fieldRef={fieldRef}
+      />
+    )
+  }
 }
 
 CheckGremlin.propTypes = {
@@ -162,7 +227,7 @@ CheckGremlin.propTypes = {
 
 CheckGremlin.defaultProps = {
   ...FieldGremlin.defaultProps,
-  onClick
+  onClick: DEFAULT_HANDLE_CLICK
 }
 
 export class GroupGremlin extends Component {
@@ -183,7 +248,7 @@ export class GroupGremlin extends Component {
 
   renderGroup () {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       groupRef,
       children
     } = this.props
@@ -222,5 +287,5 @@ GroupGremlin.propTypes = {
 }
 
 GroupGremlin.defaultProps = {
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }

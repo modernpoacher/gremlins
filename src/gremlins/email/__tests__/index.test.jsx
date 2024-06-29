@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { ValueGremlin } from '@modernpoacher/gremlins/gremlins'
 import Gremlin from '@modernpoacher/gremlins/gremlins/email'
 
-import Field from '../field/index.jsx'
+import Field from '@modernpoacher/gremlins/gremlins/email/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -33,7 +33,7 @@ jest.mock('@modernpoacher/gremlins/gremlins', () => {
   }
 })
 
-jest.mock('../field/index.jsx')
+jest.mock('@modernpoacher/gremlins/gremlins/email/field')
 
 describe('@modernpoacher/gremlins/gremlins/email', () => {
   describe('<Gremlin />', () => {

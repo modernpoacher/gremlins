@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import { CheckField } from '@modernpoacher/gremlins/components/field'
-import Field from '../index.jsx'
+import Field from '@modernpoacher/gremlins/gremlins/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -123,14 +123,14 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ONCLICK = jest.fn()
+        const MOCK_ON_CLICK = jest.fn()
 
         const component = (
           <Field
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
-            onClick={MOCK_ONCLICK}
+            onClick={MOCK_ON_CLICK}
           />
         )
 
@@ -141,21 +141,21 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
         instance.handleClick({ target: { value: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCLICK)
+        return expect(MOCK_ON_CLICK)
           .toBeCalledWith('MOCK CHECKED')
       })
     })
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
           <Field
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
-            onChange={MOCK_ONCHANGE}
+            onChange={MOCK_ON_CHANGE}
           />
         )
 
@@ -166,7 +166,7 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith('MOCK CHECKED')
       })
     })

@@ -18,9 +18,9 @@ export default class CheckboxField extends CheckField {
       id,
       name,
       value,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       fieldRef

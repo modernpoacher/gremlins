@@ -9,6 +9,11 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { GroupGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '@modernpoacher/gremlins/common'
+
 import Group from './group/index.jsx'
 
 export default class FieldsetGremlin extends Gremlin {
@@ -18,7 +23,7 @@ export default class FieldsetGremlin extends Gremlin {
 
   renderGroup () {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       children
     } = this.props
 
