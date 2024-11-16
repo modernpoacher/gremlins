@@ -45,7 +45,7 @@ const plugins = [
     'module-resolver', {
       alias: {
         /**
-         *  Storybook
+         *  Jest & Storybook
          */
         '@modernpoacher/gremlins/common': './src/common/index.mjs',
         '@modernpoacher/gremlins/gremlins/checkbox/field': './src/gremlins/checkbox/field/index.jsx',
