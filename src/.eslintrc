@@ -41,7 +41,10 @@
         "@typescript-eslint"
       ],
       "extends": "love",
-      "parser": "@typescript-eslint/parser"
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "no-undef": "off"
+      }
     }
   ],
   "settings": {

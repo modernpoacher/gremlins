@@ -5,12 +5,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueGremlin } from '@modernpoacher/gremlins/gremlins'
+import { ValueGremlin } from '#gremlins/gremlins'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '#gremlins/common'
 
 import Field from './field/index.jsx'
 
 export default class SelectGremlin extends ValueGremlin {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.multiple !== this.props.multiple) ||
@@ -24,7 +28,7 @@ export default class SelectGremlin extends ValueGremlin {
 
   handleChange = (value) => {
     const {
-      onChange
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(value)
@@ -43,7 +47,7 @@ export default class SelectGremlin extends ValueGremlin {
       tabIndex,
       accessKey,
       placeholder,
-      multiple,
+      multiple = false,
       fieldRef,
       children
     } = this.props
@@ -90,9 +94,4 @@ SelectGremlin.propTypes = {
       PropTypes.node
     )
   ])
-}
-
-SelectGremlin.defaultProps = {
-  ...ValueGremlin.defaultProps,
-  multiple: false
 }

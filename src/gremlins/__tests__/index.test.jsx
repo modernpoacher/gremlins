@@ -2,15 +2,15 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Field from '@modernpoacher/gremlins/components/field'
+import Field from '#gremlins/components/field'
 
-import { FieldGremlin as Gremlin, ValueGremlin, CheckGremlin } from '@modernpoacher/gremlins/gremlins'
+import { FieldGremlin as Gremlin, ValueGremlin, CheckGremlin } from '#gremlins/gremlins'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/components/field')
+jest.mock('#gremlins/components/field')
 
-describe('@modernpoacher/gremlins/gremlins', () => {
+describe('#gremlins/gremlins', () => {
   describe('<Gremlin />', () => {
     describe('With required props', () => {
       const component = (

@@ -2,22 +2,30 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckGremlin } from '@modernpoacher/gremlins/gremlins'
-import Gremlin from '@modernpoacher/gremlins/gremlins/checkbox'
+import { CheckGremlin } from '#gremlins/gremlins'
+import Gremlin from '#gremlins/gremlins/checkbox'
 
-import Field from '@modernpoacher/gremlins/gremlins/checkbox/field'
+import Field from '#gremlins/gremlins/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/gremlins', () => {
+jest.mock('#gremlins/gremlins', () => {
   class MockGremlin extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
-    getId () { }
+    getId () {
+      return 'MOCK ID'
+    }
 
-    shouldComponentUpdate () { }
+    shouldComponentUpdate () {
+      return true
+    }
 
-    renderField () { }
+    renderField () {
+      return 'MOCK FIELD'
+    }
 
     render () {
       const className = this.getClassName()
@@ -37,9 +45,9 @@ jest.mock('@modernpoacher/gremlins/gremlins', () => {
   }
 })
 
-jest.mock('@modernpoacher/gremlins/gremlins/checkbox/field')
+jest.mock('#gremlins/gremlins/checkbox/field')
 
-describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
+describe('#gremlins/gremlins/checkbox', () => {
   describe('<Gremlin />', () => {
     describe('With required props', () => {
       const component = (
@@ -121,6 +129,72 @@ describe('@modernpoacher/gremlins/gremlins/checkbox', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Gremlin
+          name='MOCK NAME'
+          id='MOCK ID'
+          value='MOCK VALUE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
+        />
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(CheckGremlin.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            value: 'MOCK CHANGE VALUE',
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER'
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            title: 'MOCK TITLE',
+            description: 'MOCK DESCRIPTION',
+            errorMessage: 'MOCK ERROR MESSAGE',
+            value: 'MOCK VALUE',
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER'
+          }))
+            .toBe(false)
+        })
       })
     })
 

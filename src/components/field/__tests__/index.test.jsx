@@ -4,9 +4,9 @@ import renderer from 'react-test-renderer'
 import Field, {
   ValueField,
   CheckField
-} from '@modernpoacher/gremlins/components/field'
+} from '#gremlins/components/field'
 
-describe('@modernpoacher/gremlins/components/field', () => {
+describe('#gremlins/components/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
@@ -136,7 +136,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
   describe('<ValueField />', () => {
     describe('With required props', () => {
       const component = (
-        <ValueField name='MOCK NAME' />
+        <ValueField name='MOCK NAME' value='MOCK VALUE' />
       )
 
       it('renders', () => {
@@ -205,12 +205,12 @@ describe('@modernpoacher/gremlins/components/field', () => {
         <ValueField
           name='MOCK NAME'
           id='MOCK ID'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
-          value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
         />
       )
@@ -250,7 +250,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
         const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <ValueField name='MOCK NAME' onChange={MOCK_ON_CHANGE} />
+          <ValueField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -269,7 +269,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
   describe('<CheckField />', () => {
     describe('With required props', () => {
       const component = (
-        <CheckField name='MOCK NAME' />
+        <CheckField name='MOCK NAME' value='MOCK VALUE' />
       )
 
       it('renders', () => {
@@ -325,6 +325,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
           <CheckField
             name='MOCK NAME'
             id='MOCK ID'
+            value='MOCK VALUE'
             required
             disabled
             readOnly
@@ -346,6 +347,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
         <CheckField
           name='MOCK NAME'
           id='MOCK ID'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -368,24 +370,50 @@ describe('@modernpoacher/gremlins/components/field', () => {
       })
 
       describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            ...instance.props,
-            checked: false,
-            onClick: jest.fn()
-          }))
-            .toBe(true)
+        describe('`value`', () => {
+          it('returns true', () => {
+            return expect(instance.shouldComponentUpdate({
+              ...instance.props,
+              value: 'MOCK CHANGED VALUE',
+              onClick: jest.fn()
+            }))
+              .toBe(true)
+          })
+        })
+
+        describe('`checked`', () => {
+          it('returns true', () => {
+            return expect(instance.shouldComponentUpdate({
+              ...instance.props,
+              checked: false,
+              onClick: jest.fn()
+            }))
+              .toBe(true)
+          })
         })
       })
 
       describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({ // instance.props
-            ...instance.props,
-            checked: true,
-            onClick: MOCK_ON_CLICK
-          }))
-            .toBe(false)
+        describe('`value`', () => {
+          it('returns false', () => {
+            return expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props,
+              value: 'MOCK VALUE',
+              onClick: MOCK_ON_CLICK
+            }))
+              .toBe(false)
+          })
+        })
+
+        describe('`checked`', () => {
+          it('returns false', () => {
+            return expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props,
+              checked: true,
+              onClick: MOCK_ON_CLICK
+            }))
+              .toBe(false)
+          })
         })
       })
     })
@@ -395,7 +423,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
         const MOCK_ON_CLICK = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onClick={MOCK_ON_CLICK} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onClick={MOCK_ON_CLICK} />
         )
 
         const instance = (
@@ -403,10 +431,10 @@ describe('@modernpoacher/gremlins/components/field', () => {
             .getInstance()
         )
 
-        instance.handleClick({ target: { checked: 'MOCK CHECKED' } })
+        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -415,7 +443,7 @@ describe('@modernpoacher/gremlins/components/field', () => {
         const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onChange={MOCK_ON_CHANGE} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -423,10 +451,10 @@ describe('@modernpoacher/gremlins/components/field', () => {
             .getInstance()
         )
 
-        instance.handleChange({ target: { checked: 'MOCK CHECKED' } })
+        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })

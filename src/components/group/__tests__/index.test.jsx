@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Group from '@modernpoacher/gremlins/components/group'
+import Group from '#gremlins/components/group'
 
-describe('@modernpoacher/gremlins/components/group', () => {
+describe('#gremlins/components/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

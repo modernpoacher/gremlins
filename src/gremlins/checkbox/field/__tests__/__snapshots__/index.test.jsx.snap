@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With additional props renders 1`] = `
+exports[`#gremlins/gremlins/checkbox/field <Field /> With additional props renders 1`] = `
 [
   <input
     className="MOCK CLASSNAME"
@@ -12,6 +12,7 @@ exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With addition
     readOnly={true}
     required={true}
     type="checkbox"
+    value="MOCK VALUE"
   />,
   <label
     htmlFor="MOCK ID"
@@ -21,7 +22,7 @@ exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With addition
 ]
 `;
 
-exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With required props renders 1`] = `
+exports[`#gremlins/gremlins/checkbox/field <Field /> With required props renders 1`] = `
 [
   <input
     className="MOCK CLASSNAME"
@@ -32,6 +33,7 @@ exports[`@modernpoacher/gremlins/gremlins/checkbox/field <Field /> With required
     readOnly={false}
     required={false}
     type="checkbox"
+    value="MOCK VALUE"
   />,
   <label>
     ​

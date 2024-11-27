@@ -1,11 +1,30 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "NodeNext",
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "paths": {
+      "#gremlins/common": [
+        "./src/common/index.mjs"
+      ],
+      "#gremlins/components/*": [
+        "./src/components/*/index.jsx"
+      ],
+      "#gremlins/gremlins": [
+        "./src/gremlins/index.jsx"
+      ],
+      "#gremlins/gremlins/*": [
+        "./src/gremlins/*/index.jsx"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

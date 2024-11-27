@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/gremlins/gremlins/email/field <Field /> With additional props renders 1`] = `
+exports[`#gremlins/gremlins/email/field <Field /> With additional props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
   disabled={true}
@@ -12,7 +12,7 @@ exports[`@modernpoacher/gremlins/gremlins/email/field <Field /> With additional 
 />
 `;
 
-exports[`@modernpoacher/gremlins/gremlins/email/field <Field /> With required props renders 1`] = `
+exports[`#gremlins/gremlins/email/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
   disabled={false}

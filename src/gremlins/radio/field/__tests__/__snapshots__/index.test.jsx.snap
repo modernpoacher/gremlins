@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/gremlins/gremlins/radio/field <Field /> With additional props renders 1`] = `
+exports[`#gremlins/gremlins/radio/field <Field /> With additional props renders 1`] = `
 [
   <input
     className="MOCK CLASSNAME"
@@ -22,7 +22,7 @@ exports[`@modernpoacher/gremlins/gremlins/radio/field <Field /> With additional 
 ]
 `;
 
-exports[`@modernpoacher/gremlins/gremlins/radio/field <Field /> With required props renders 1`] = `
+exports[`#gremlins/gremlins/radio/field <Field /> With required props renders 1`] = `
 [
   <input
     className="MOCK CLASSNAME"

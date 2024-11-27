@@ -2,14 +2,20 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueField } from '@modernpoacher/gremlins/components/field'
-import Field from '@modernpoacher/gremlins/gremlins/select/field'
+import { ValueField } from '#gremlins/components/field'
+import Field from '#gremlins/gremlins/select/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/components/field', () => {
+jest.mock('#gremlins/components/field', () => {
   class MockField extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
+
+    shouldComponentUpdate () {
+      return true
+    }
   }
 
   return {
@@ -19,7 +25,7 @@ jest.mock('@modernpoacher/gremlins/components/field', () => {
   }
 })
 
-describe('@modernpoacher/gremlins/gremlins/select/field', () => {
+describe('#gremlins/gremlins/select/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
@@ -83,6 +89,76 @@ describe('@modernpoacher/gremlins/gremlins/select/field', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Field
+          name='MOCK NAME'
+          id='MOCK ID'
+          value='MOCK VALUE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          multiple
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Field>
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(ValueField.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            value: 'MOCK CHANGE VALUE',
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER',
+            multiple: false,
+            children: 'MOCK CHANGE CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            value: 'MOCK VALUE',
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER',
+            multiple: true,
+            children: 'MOCK CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(false)
+        })
       })
     })
   })

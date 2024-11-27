@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 
 import {
   DEFAULT_HANDLE_CHANGE
-} from '@modernpoacher/gremlins/common'
+} from '#gremlins/common'
 
 export default class Group extends Component {
   getClassName () {
@@ -20,7 +20,7 @@ export default class Group extends Component {
    * @param {GroupProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.onChange !== this.props.onChange) ||
       (props.children !== this.props.children)

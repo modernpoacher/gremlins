@@ -2,14 +2,20 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/gremlins/components/field'
-import Field from '@modernpoacher/gremlins/gremlins/radio/field'
+import { CheckField } from '#gremlins/components/field'
+import Field from '#gremlins/gremlins/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/components/field', () => {
+jest.mock('#gremlins/components/field', () => {
   class MockField extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
+
+    handleChange () { }
+
+    handleClick () { }
   }
 
   return {
@@ -19,7 +25,7 @@ jest.mock('@modernpoacher/gremlins/components/field', () => {
   }
 })
 
-describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
+describe('#gremlins/gremlins/radio/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
@@ -74,8 +80,8 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
       it('renders', () => {
         const component = (
           <Field
-            name='MOCK NAME'
             id='MOCK ID'
+            name='MOCK NAME'
             value='MOCK VALUE'
             required
             disabled
@@ -123,7 +129,7 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ON_CLICK = jest.fn()
+        const MOCK_ON_CLICK = jest.spyOn(CheckField.prototype, 'handleClick')
 
         const component = (
           <Field
@@ -139,16 +145,16 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
             .getInstance()
         )
 
-        instance.handleClick({ target: { value: 'MOCK CHECKED' } })
+        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ON_CHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.spyOn(CheckField.prototype, 'handleChange')
 
         const component = (
           <Field
@@ -164,10 +170,10 @@ describe('@modernpoacher/gremlins/gremlins/radio/field', () => {
             .getInstance()
         )
 
-        instance.handleChange({ target: { value: 'MOCK CHECKED' } })
+        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })
   })

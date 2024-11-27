@@ -2,14 +2,16 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/gremlins/components/field'
-import Field from '@modernpoacher/gremlins/gremlins/checkbox/field'
+import { CheckField } from '#gremlins/components/field'
+import Field from '#gremlins/gremlins/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/components/field', () => {
+jest.mock('#gremlins/components/field', () => {
   class MockField extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
     handleChange () { }
 
@@ -23,7 +25,7 @@ jest.mock('@modernpoacher/gremlins/components/field', () => {
   }
 })
 
-describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
+describe('#gremlins/gremlins/checkbox/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
@@ -38,10 +40,37 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
           .toMatchSnapshot()
       })
 
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(Field.prototype.getClassName)
-            .toBeDefined()
+      describe('Prototype', () => {
+        describe('`getClassName`', () => {
+          it('is defined', () => {
+            return expect(Field.prototype.getClassName)
+              .toBeDefined()
+          })
+        })
+      })
+
+      describe('Instance', () => {
+        let instance
+
+        beforeEach(() => {
+          instance = (
+            renderer.create(component)
+              .getInstance()
+          )
+        })
+
+        describe('`handleClick`', () => {
+          it('is defined', () => {
+            return expect(instance.handleClick)
+              .toBeDefined()
+          })
+        })
+
+        describe('`handleChange`', () => {
+          it('is defined', () => {
+            return expect(instance.handleChange)
+              .toBeDefined()
+          })
         })
       })
     })
@@ -50,8 +79,8 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
       it('renders', () => {
         const component = (
           <Field
-            name='MOCK NAME'
             id='MOCK ID'
+            name='MOCK NAME'
             value='MOCK VALUE'
             required
             disabled
@@ -93,6 +122,54 @@ describe('@modernpoacher/gremlins/gremlins/checkbox/field', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`handleClick()`', () => {
+      it('invokes the `onClick` prop', () => {
+        const MOCK_ON_CLICK = jest.spyOn(CheckField.prototype, 'handleClick')
+
+        const component = (
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            onClick={MOCK_ON_CLICK}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+
+        return expect(MOCK_ON_CLICK)
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+      })
+    })
+
+    describe('`handleChange()`', () => {
+      it('invokes the `onChange` prop', () => {
+        const MOCK_ON_CHANGE = jest.spyOn(CheckField.prototype, 'handleChange')
+
+        const component = (
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            onChange={MOCK_ON_CHANGE}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+
+        return expect(MOCK_ON_CHANGE)
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })
   })

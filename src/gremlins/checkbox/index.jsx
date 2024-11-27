@@ -5,7 +5,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckGremlin } from '@modernpoacher/gremlins/gremlins'
+import { CheckGremlin } from '#gremlins/gremlins'
+
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from '#gremlins/common'
 
 import Field from './field/index.jsx'
 
@@ -14,20 +19,27 @@ export default class CheckboxGremlin extends CheckGremlin {
     return classnames(super.getClassName(), 'checkbox')
   }
 
-  handleClick = (value) => {
+  handleChange = (value, checked) => {
     const {
-      onClick
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
-    onClick(value)
+    onChange(value, checked)
   }
 
-  handleChange = (value) => {
+  handleClick = (value, checked) => {
     const {
-      onChange
+      onClick = DEFAULT_HANDLE_CLICK
     } = this.props
 
-    onChange(value)
+    onClick(value, checked)
+  }
+
+  shouldComponentUpdate (props, state) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.value !== this.props.value)
+    )
   }
 
   renderField () {
@@ -60,8 +72,8 @@ export default class CheckboxGremlin extends CheckGremlin {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onClick={this.handleClick}
         onChange={this.handleChange}
+        onClick={this.handleClick}
         fieldRef={fieldRef}
       />
     )
@@ -81,8 +93,4 @@ export default class CheckboxGremlin extends CheckGremlin {
 CheckboxGremlin.propTypes = {
   ...CheckGremlin.propTypes,
   value: PropTypes.string.isRequired
-}
-
-CheckboxGremlin.defaultProps = {
-  ...CheckGremlin.defaultProps
 }

@@ -7,14 +7,14 @@ import PropTypes from 'prop-types'
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from '@modernpoacher/gremlins/common'
+} from '#gremlins/common'
 
 export default class Field extends Component {
   getClassName () {
     return 'input'
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.id !== this.props.id) ||
       (props.required !== this.props.required) ||
@@ -81,15 +81,17 @@ Field.defaultProps = {
  * ValueField component
  */
 export class ValueField extends Field {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
+      super.shouldComponentUpdate(props, state) ||
       (props.value !== this.props.value)
     )
   }
 
   handleChange = ({ target: { value } }) => {
-    const { onChange = DEFAULT_HANDLE_CHANGE } = this.props
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
+    } = this.props
 
     onChange(value)
   }
@@ -109,24 +111,29 @@ ValueField.defaultProps = {
  * CheckField component
  */
 export class CheckField extends Field {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
+      super.shouldComponentUpdate(props, state) ||
+      (props.value !== this.props.value) ||
       (props.checked !== this.props.checked) ||
       (props.onClick !== this.props.onClick)
     )
   }
 
-  handleClick = ({ target: { checked } }) => {
-    const { onClick = DEFAULT_HANDLE_CLICK } = this.props
+  handleClick = ({ target: { value, checked } }) => {
+    const {
+      onClick = DEFAULT_HANDLE_CLICK
+    } = this.props
 
-    onClick(checked)
+    onClick(value, checked)
   }
 
-  handleChange = ({ target: { checked } }) => {
-    const { onChange = DEFAULT_HANDLE_CHANGE } = this.props
+  handleChange = ({ target: { value, checked } }) => {
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
+    } = this.props
 
-    onChange(checked)
+    onChange(value, checked)
   }
 }
 

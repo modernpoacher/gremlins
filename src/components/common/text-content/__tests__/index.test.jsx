@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from '@modernpoacher/gremlins/components/common/text-content'
+import Component from '#gremlins/components/common/text-content'
 
 jest.useFakeTimers()
 
-describe('@modernpoacher/gremlins/components/common/text-content', () => {
+describe('#gremlins/components/common/text-content', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {

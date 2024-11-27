@@ -4,7 +4,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from '@modernpoacher/gremlins/components/field'
+import { ValueField } from '#gremlins/components/field'
 
 export default class EmailField extends ValueField {
   getClassName () {
@@ -51,8 +51,4 @@ export default class EmailField extends ValueField {
 
 EmailField.propTypes = {
   ...ValueField.propTypes
-}
-
-EmailField.defaultProps = {
-  ...ValueField.defaultProps
 }

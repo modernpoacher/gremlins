@@ -16,14 +16,14 @@ import classnames from 'classnames'
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from '@modernpoacher/gremlins/common'
+} from '#gremlins/common'
 
 import Field, {
   ValueField,
   CheckField
-} from '@modernpoacher/gremlins/components/field'
+} from '#gremlins/components/field'
 
-import Group from '@modernpoacher/gremlins/components/group'
+import Group from '#gremlins/components/group'
 
 export class FieldGremlin extends Component {
   getClassName () {
@@ -49,7 +49,7 @@ export class FieldGremlin extends Component {
    * @param {FieldGremlinProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
@@ -126,7 +126,7 @@ FieldGremlin.defaultProps = {
 }
 
 export class ValueGremlin extends FieldGremlin {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)
@@ -176,7 +176,7 @@ ValueGremlin.defaultProps = {
 }
 
 export class CheckGremlin extends FieldGremlin {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.checked !== this.props.checked) ||
@@ -239,7 +239,7 @@ export class GroupGremlin extends Component {
    * @param {GroupGremlinProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.children !== this.props.children) ||
       (props.onChange !== this.props.onChange)

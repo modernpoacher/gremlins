@@ -5,23 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/gremlins/components/field'
+import { CheckField } from '#gremlins/components/field'
 
 export default class RadioField extends CheckField {
   getClassName () {
     return classnames(super.getClassName(), 'radio')
-  }
-
-  handleClick = ({ target: { value } }) => {
-    const { onClick } = this.props
-
-    onClick(value)
-  }
-
-  handleChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-
-    onChange(value)
   }
 
   render () {
@@ -53,8 +41,8 @@ export default class RadioField extends CheckField {
             readOnly={readOnly}
             tabIndex={tabIndex}
             accessKey={accessKey}
-            onClick={this.handleClick}
             onChange={this.handleChange}
+            onClick={this.handleClick}
             className={className}
             type='radio'
             ref={fieldRef}
@@ -82,8 +70,8 @@ export default class RadioField extends CheckField {
           readOnly={readOnly}
           tabIndex={tabIndex}
           accessKey={accessKey}
-          onClick={this.handleClick}
           onChange={this.handleChange}
+          onClick={this.handleClick}
           className={className}
           type='radio'
           ref={fieldRef}
@@ -100,8 +88,4 @@ RadioField.propTypes = {
   ...CheckField.propTypes,
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
-}
-
-RadioField.defaultProps = {
-  ...CheckField.defaultProps
 }

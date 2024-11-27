@@ -8,11 +8,11 @@ import React from 'react'
 
 import classnames from 'classnames'
 
-import { GroupGremlin as Gremlin } from '@modernpoacher/gremlins/gremlins'
+import { GroupGremlin as Gremlin } from '#gremlins/gremlins'
 
 import {
   DEFAULT_HANDLE_CHANGE
-} from '@modernpoacher/gremlins/common'
+} from '#gremlins/common'
 
 import Group from './group/index.jsx'
 
@@ -38,8 +38,4 @@ export default class FieldsetGremlin extends Gremlin {
 
 FieldsetGremlin.propTypes = {
   ...Gremlin.propTypes
-}
-
-FieldsetGremlin.defaultProps = {
-  ...Gremlin.defaultProps
 }

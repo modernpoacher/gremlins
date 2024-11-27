@@ -5,7 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueField } from '@modernpoacher/gremlins/components/field'
+import { ValueField } from '#gremlins/components/field'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '#gremlins/common'
 
 function getSelectedValues ({ target: { selectedOptions } }) {
   return (
@@ -19,7 +23,7 @@ function getSelectedValue ({ target: { value } }) {
 }
 
 export default class SelectField extends ValueField {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.multiple !== this.props.multiple) ||
@@ -33,8 +37,8 @@ export default class SelectField extends ValueField {
 
   handleChange = (event) => {
     const {
-      multiple,
-      onChange
+      multiple = false,
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     if (multiple) {
@@ -55,7 +59,7 @@ export default class SelectField extends ValueField {
       readOnly = false,
       tabIndex,
       accessKey,
-      multiple,
+      multiple = false,
       children,
       fieldRef
     } = this.props
@@ -104,9 +108,4 @@ SelectField.propTypes = {
       PropTypes.node
     )
   ])
-}
-
-SelectField.defaultProps = {
-  ...ValueField.defaultProps,
-  multiple: false
 }

@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueField } from '@modernpoacher/gremlins/components/field'
+import { ValueField } from '#gremlins/components/field'
 
 export default class NumberField extends ValueField {
   getClassName () {
@@ -60,8 +60,4 @@ NumberField.propTypes = {
     PropTypes.string,
     PropTypes.number
   ])
-}
-
-NumberField.defaultProps = {
-  ...ValueField.defaultProps
 }

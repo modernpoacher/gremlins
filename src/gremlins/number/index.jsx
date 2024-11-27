@@ -5,7 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueGremlin } from '@modernpoacher/gremlins/gremlins'
+import { ValueGremlin } from '#gremlins/gremlins'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '#gremlins/common'
 
 import Field from './field/index.jsx'
 
@@ -16,7 +20,7 @@ export default class NumberGremlin extends ValueGremlin {
 
   handleChange = (value) => {
     const {
-      onChange
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(value)
@@ -67,8 +71,4 @@ NumberGremlin.propTypes = {
     PropTypes.string,
     PropTypes.number
   ])
-}
-
-NumberGremlin.defaultProps = {
-  ...ValueGremlin.defaultProps
 }

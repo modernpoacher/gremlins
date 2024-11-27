@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/gremlins/components/field'
+import { CheckField } from '#gremlins/components/field'
 
 export default class CheckboxField extends CheckField {
   getClassName () {
@@ -41,8 +41,8 @@ export default class CheckboxField extends CheckField {
             readOnly={readOnly}
             tabIndex={tabIndex}
             accessKey={accessKey}
-            onClick={this.handleClick}
             onChange={this.handleChange}
+            onClick={this.handleClick}
             className={className}
             type='checkbox'
             ref={fieldRef}
@@ -64,14 +64,14 @@ export default class CheckboxField extends CheckField {
           defaultChecked={defaultChecked}
           id={id}
           name={name}
-          checked={checked}
+          value={value}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
           tabIndex={tabIndex}
           accessKey={accessKey}
-          onClick={this.handleClick}
           onChange={this.handleChange}
+          onClick={this.handleClick}
           className={className}
           type='checkbox'
           ref={fieldRef}
@@ -87,8 +87,4 @@ export default class CheckboxField extends CheckField {
 CheckboxField.propTypes = {
   ...CheckField.propTypes,
   value: PropTypes.string.isRequired
-}
-
-CheckboxField.defaultProps = {
-  ...CheckField.defaultProps
 }

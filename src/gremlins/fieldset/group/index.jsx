@@ -3,7 +3,7 @@
  */
 
 import classnames from 'classnames'
-import Group from '@modernpoacher/gremlins/components/group'
+import Group from '#gremlins/components/group'
 
 export default class FieldsetGroup extends Group {
   getClassName () {
@@ -13,8 +13,4 @@ export default class FieldsetGroup extends Group {
 
 FieldsetGroup.propTypes = {
   ...Group.propTypes
-}
-
-FieldsetGroup.defaultProps = {
-  ...Group.defaultProps
 }

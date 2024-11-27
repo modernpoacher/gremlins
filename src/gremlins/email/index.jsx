@@ -4,7 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueGremlin } from '@modernpoacher/gremlins/gremlins'
+import { ValueGremlin } from '#gremlins/gremlins'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '#gremlins/common'
 
 import Field from './field/index.jsx'
 
@@ -15,7 +19,7 @@ export default class EmailGremlin extends ValueGremlin {
 
   handleChange = (value) => {
     const {
-      onChange
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(value)
@@ -58,8 +62,4 @@ export default class EmailGremlin extends ValueGremlin {
 
 EmailGremlin.propTypes = {
   ...ValueGremlin.propTypes
-}
-
-EmailGremlin.defaultProps = {
-  ...ValueGremlin.defaultProps
 }

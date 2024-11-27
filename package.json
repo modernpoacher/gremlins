@@ -8,7 +8,7 @@
   ],
   "main": "./src/index.cjs",
   "type": "module",
-  "types": "./src/index.d.cts",
+  "types": "./src/index.d.mts",
   "author": {
     "name": "Jonathan Perry for Modern Poacher Limited",
     "email": "modernpoacher@modernpoacher.com",
@@ -58,14 +58,12 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "autoprefixer": "^10.4.20",
-    "babel-plugin-module-resolver": "^5.0.2",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.39.0",
     "cross-env": "^7.0.3",
     "eslint": "8.57.1",
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-react": "^7.37.2",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
@@ -89,7 +87,14 @@
     "webpack-cli": "^5.1.4"
   },
   "imports": {
-    "#build/paths": "./build/paths.mjs"
+    "#build/paths": "./build/paths.mjs",
+    "#gremlins/common": "./src/common/index.mjs",
+    "#gremlins/components/*": "./src/components/*/index.jsx",
+    "#gremlins/gremlins": "./src/gremlins/index.jsx",
+    "#gremlins/gremlins/*": "./src/gremlins/*/index.jsx",
+    "#stories/*": "./stories/*/index.stories.jsx",
+    "#stories/state": "./stories/state/index.jsx",
+    "#stories/state/*": "./stories/state/*/index.jsx"
   },
   "exports": {
     ".": {
@@ -97,30 +102,8 @@
       "import": "./src/index.mjs"
     },
     "./common": "./src/common/index.mjs",
-    "./components/common/disabled": "./src/components/common/disabled/index.cjs",
-    "./components/common/readonly": "./src/components/common/readonly/index.cjs",
-    "./components/common/required": "./src/components/common/required/index.cjs",
-    "./components/common/text-content": "./src/components/common/text-content/index.cjs",
-    "./components/field": "./src/components/field/index.cjs",
-    "./components/group": "./src/components/group/index.cjs",
+    "./components/*": "./src/components/*/index.cjs",
     "./gremlins": "./src/gremlins/index.cjs",
-    "./gremlins/checkbox": "./src/gremlins/checkbox/index.cjs",
-    "./gremlins/checkbox/field": "./src/gremlins/checkbox/field/index.cjs",
-    "./gremlins/email": "./src/gremlins/email/index.cjs",
-    "./gremlins/email/field": "./src/gremlins/email/field/index.cjs",
-    "./gremlins/fieldset": "./src/gremlins/fieldset/index.cjs",
-    "./gremlins/fieldset/group": "./src/gremlins/fieldset/group/index.cjs",
-    "./gremlins/number": "./src/gremlins/number/index.cjs",
-    "./gremlins/number/field": "./src/gremlins/number/field/index.cjs",
-    "./gremlins/password": "./src/gremlins/password/index.cjs",
-    "./gremlins/password/field": "./src/gremlins/password/field/index.cjs",
-    "./gremlins/radio": "./src/gremlins/radio/index.cjs",
-    "./gremlins/radio/field": "./src/gremlins/radio/field/index.cjs",
-    "./gremlins/select": "./src/gremlins/select/index.cjs",
-    "./gremlins/select/field": "./src/gremlins/select/field/index.cjs",
-    "./gremlins/text": "./src/gremlins/text/index.cjs",
-    "./gremlins/text/field": "./src/gremlins/text/field/index.cjs",
-    "./gremlins/textarea": "./src/gremlins/textarea/index.cjs",
-    "./gremlins/textarea/field": "./src/gremlins/textarea/field/index.cjs"
+    "./gremlins/*": "./src/gremlins/*/index.cjs"
   }
 }

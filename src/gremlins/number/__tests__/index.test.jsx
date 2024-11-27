@@ -2,20 +2,26 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueGremlin } from '@modernpoacher/gremlins/gremlins'
-import Gremlin from '@modernpoacher/gremlins/gremlins/number'
+import { ValueGremlin } from '#gremlins/gremlins'
+import Gremlin from '#gremlins/gremlins/number'
 
-import Field from '@modernpoacher/gremlins/gremlins/number/field'
+import Field from '#gremlins/gremlins/number/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/gremlins/gremlins', () => {
+jest.mock('#gremlins/gremlins', () => {
   class MockGremlin extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
-    getId () { }
+    getId () {
+      return 'MOCK ID'
+    }
 
-    renderField () { }
+    renderField () {
+      return 'MOCK FIELD'
+    }
 
     render () {
       const className = this.getClassName()
@@ -35,9 +41,9 @@ jest.mock('@modernpoacher/gremlins/gremlins', () => {
   }
 })
 
-jest.mock('@modernpoacher/gremlins/gremlins/number/field')
+jest.mock('#gremlins/gremlins/number/field')
 
-describe('@modernpoacher/gremlins/gremlins/number', () => {
+describe('#gremlins/gremlins/number', () => {
   describe('<Gremlin />', () => {
     describe('With required props', () => {
       const component = (
