@@ -16,13 +16,15 @@ export default {
 
 export function Checked (args) {
   return (
-    <CheckboxState value='value'>
-      <CheckboxGremlin {...args} value='value' />
+    <CheckboxState checked>
+      <CheckboxGremlin {...args} value='Value' />
     </CheckboxState>
   )
 }
 
 Checked.args = {
+  title: 'Title',
+  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
@@ -34,13 +36,15 @@ Checked.args = {
 
 export function DefaultChecked (args) {
   return (
-    <CheckboxState defaultValue='value'>
-      <CheckboxGremlin {...args} value='value' />
+    <CheckboxState defaultChecked>
+      <CheckboxGremlin {...args} value='Value' />
     </CheckboxState>
   )
 }
 
 DefaultChecked.args = {
+  title: 'Title',
+  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,

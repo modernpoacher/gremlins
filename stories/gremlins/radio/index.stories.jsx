@@ -14,36 +14,42 @@ export default {
   }
 }
 
-export function Value (args) {
+export function Checked (args) {
   return (
-    <RadioState value='value'>
-      <RadioGremlin {...args} id='radio' value='value' />
+    <RadioState checked>
+      <RadioGremlin {...args} value='Value' />
     </RadioState>
   )
 }
 
-Value.args = {
+Checked.args = {
+  title: 'Title',
+  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
   tabIndex: 0,
   accessKey: 'A',
+  id: 'radio',
   name: 'radio'
 }
 
-export function DefaultValue (args) {
+export function DefaultChecked (args) {
   return (
-    <RadioState defaultValue='value'>
-      <RadioGremlin {...args} id='radio' value='value' />
+    <RadioState defaultChecked>
+      <RadioGremlin {...args} value='Value' />
     </RadioState>
   )
 }
 
-DefaultValue.args = {
+DefaultChecked.args = {
+  title: 'Title',
+  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
   tabIndex: 0,
   accessKey: 'A',
+  id: 'radio',
   name: 'radio'
 }

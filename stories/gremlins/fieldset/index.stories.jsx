@@ -67,8 +67,8 @@ export function Default () {
         <RadioGremlin
           id='radio-2'
           name='radio'
-         value='value'
-         />
+          value='value'
+        />
         <RadioGremlin
           id='radio-3'
           name='radio'
@@ -88,7 +88,7 @@ export function Default () {
         <TextGremlin
           id='text'
           name='text'
-         />
+        />
       </TextState>
       <TextareaState value='Value'>
         <TextareaGremlin
