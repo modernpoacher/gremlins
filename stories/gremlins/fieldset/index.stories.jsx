@@ -38,6 +38,7 @@ export function Default () {
         <CheckboxGremlin
           id='checkbox'
           name='checkbox'
+          value='value'
         />
       </CheckboxState>
       <EmailState value='email@email.com'>
@@ -58,21 +59,21 @@ export function Default () {
           name='password'
         />
       </PasswordState>
-      <RadioState value='value'>
+      <RadioState value='two'>
         <RadioGremlin
           id='radio-1'
           name='radio'
-          value='value'
+          value='one'
         />
         <RadioGremlin
           id='radio-2'
           name='radio'
-          value='value'
+          value='two'
         />
         <RadioGremlin
           id='radio-3'
           name='radio'
-          value='value'
+          value='three'
         />
       </RadioState>
       <SelectState value='one'>

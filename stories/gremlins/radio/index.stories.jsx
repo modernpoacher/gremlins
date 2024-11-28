@@ -16,8 +16,22 @@ export default {
 
 export function Checked (args) {
   return (
-    <RadioState checked>
-      <RadioGremlin {...args} value='Value' />
+    <RadioState value='two' checked>
+      <RadioGremlin
+        {...args}
+        id='radio-a'
+        value='one'
+      />
+      <RadioGremlin
+        {...args}
+        id='radio-b'
+        value='two'
+      />
+      <RadioGremlin
+        {...args}
+        id='radio-c'
+        value='three'
+      />
     </RadioState>
   )
 }
@@ -36,8 +50,22 @@ Checked.args = {
 
 export function DefaultChecked (args) {
   return (
-    <RadioState defaultChecked>
-      <RadioGremlin {...args} value='Value' />
+    <RadioState value='two' defaultChecked>
+      <RadioGremlin
+        {...args}
+        id='radio-1'
+        value='one'
+      />
+      <RadioGremlin
+        {...args}
+        id='radio-2'
+        value='two'
+      />
+      <RadioGremlin
+        {...args}
+        id='radio-3'
+        value='three'
+      />
     </RadioState>
   )
 }
