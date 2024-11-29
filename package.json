@@ -82,7 +82,7 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
-    "storybook": "7.6.20",
+    "storybook": "8.4.6",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4"
   },
