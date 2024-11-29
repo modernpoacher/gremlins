@@ -11,16 +11,16 @@
     "baseUrl": ".",
     "paths": {
       "#gremlins/common": [
-        "./src/common/index.mjs"
+        "src/common/index.mjs"
       ],
       "#gremlins/components/*": [
-        "./src/components/*/index.jsx"
+        "src/components/*/index.jsx"
       ],
       "#gremlins/gremlins": [
-        "./src/gremlins/index.jsx"
+        "src/gremlins/index.jsx"
       ],
       "#gremlins/gremlins/*": [
-        "./src/gremlins/*/index.jsx"
+        "src/gremlins/*/index.jsx"
       ]
     }
   },
