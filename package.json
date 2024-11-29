@@ -51,7 +51,7 @@
     "@modernpoacher/design-system": "1.1.17",
     "@storybook/addon-actions": "7.6.20",
     "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-links": "7.6.20",
+    "@storybook/addon-links": "8.4.5",
     "@storybook/react": "7.6.20",
     "@storybook/react-webpack5": "7.6.20",
     "@types/react": "^18.3.12",
