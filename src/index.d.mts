@@ -1,9 +1,3 @@
-declare namespace GremlinsTypes {
-  export type OnChangeType = () => void
-
-  export type OnClickType = () => void
-}
-
 declare module '#gremlins' {
   export { default as CheckboxGremlin } from '#gremlins/gremlins/checkbox'
   export { default as EmailGremlin } from '#gremlins/gremlins/email'

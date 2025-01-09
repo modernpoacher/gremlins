@@ -19,12 +19,11 @@ const log = debug('@modernpoacher/gremlins/build/transform')
 
 log('`gremlins` is awake')
 
-// eslint-disable-next-line no-irregular-whitespace
 // \u200b
 // ✓ \u2713
 // • \u2022
 
-const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/gm // eslint-disable-line no-irregular-whitespace
+const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/gm
 
 const STORYBOOK_PATH = relative(currentDir, storybookPath)
 
