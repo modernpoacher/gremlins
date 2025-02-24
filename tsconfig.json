@@ -8,25 +8,14 @@
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "#gremlins/common": [
-        "src/common/index.mjs"
-      ],
-      "#gremlins/components/*": [
-        "src/components/*/index.jsx"
-      ],
-      "#gremlins/gremlins": [
-        "src/gremlins/index.jsx"
-      ],
-      "#gremlins/gremlins/*": [
-        "src/gremlins/*/index.jsx"
-      ]
-    }
+    "baseUrl": "."
   },
   "include": [
     ".",
     "src/**/*",
     "stories/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**/*"
   ]
 }
