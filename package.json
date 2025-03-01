@@ -52,7 +52,7 @@
     "@sequencemedia/eslint-config-standard": "^0.2.35",
     "@sequencemedia/eslint-config-typescript": "^0.1.50",
     "@storybook/addon-actions": "7.6.20",
-    "@storybook/addon-essentials": "7.6.20",
+    "@storybook/addon-essentials": "8.6.3",
     "@storybook/addon-links": "7.6.20",
     "@storybook/react": "7.6.20",
     "@storybook/react-webpack5": "7.6.20",
