@@ -6,7 +6,7 @@
     "Gremlins",
     "React"
   ],
-  "main": "./src/index.cjs",
+  "main": "./src/js/index.cjs",
   "type": "module",
   "types": "./index.d.mts",
   "author": {
@@ -48,7 +48,7 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
-    "@modernpoacher/design-system": "1.2.0",
+    "@modernpoacher/design-system": "github:modernpoacher/design-system#v2.0.0",
     "@sequencemedia/eslint-config-standard": "^0.2.42",
     "@sequencemedia/eslint-config-typescript": "^0.1.58",
     "@storybook/addon-actions": "^8.6.4",
@@ -94,22 +94,22 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
-    "#gremlins/common": "./src/common/index.mjs",
-    "#gremlins/components/*": "./src/components/*/index.jsx",
-    "#gremlins/gremlins": "./src/gremlins/index.jsx",
-    "#gremlins/gremlins/*": "./src/gremlins/*/index.jsx",
+    "#gremlins/common": "./src/js/common/index.mjs",
+    "#gremlins/components/*": "./src/js/components/*/index.jsx",
+    "#gremlins/gremlins": "./src/js/gremlins/index.jsx",
+    "#gremlins/gremlins/*": "./src/js/gremlins/*/index.jsx",
     "#stories/*": "./stories/*/index.stories.jsx",
     "#stories/state": "./stories/state/index.jsx",
     "#stories/state/*": "./stories/state/*/index.jsx"
   },
   "exports": {
     ".": {
-      "require": "./src/index.cjs",
-      "import": "./src/index.mjs"
+      "require": "./src/js/index.cjs",
+      "import": "./src/js/index.mjs"
     },
-    "./common": "./src/common/index.mjs",
-    "./components/*": "./src/components/*/index.cjs",
-    "./gremlins": "./src/gremlins/index.cjs",
-    "./gremlins/*": "./src/gremlins/*/index.cjs"
+    "./common": "./src/js/common/index.mjs",
+    "./components/*": "./src/js/components/*/index.cjs",
+    "./gremlins": "./src/js/gremlins/index.cjs",
+    "./gremlins/*": "./src/js/gremlins/*/index.cjs"
   }
 }
