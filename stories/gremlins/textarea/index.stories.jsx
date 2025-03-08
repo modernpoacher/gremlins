@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import TextareaGremlin from '@modernpoacher/gremlins/gremlins/textarea'
@@ -14,11 +18,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <TextareaState value='Value'>
-      <TextareaGremlin {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState value='Value'>
+        <TextareaGremlin {...args} />
+      </TextareaState>
+    </form>
   )
 }
 
@@ -32,11 +42,17 @@ Value.args = {
   name: 'textarea'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <TextareaState defaultValue='Default value'>
-      <TextareaGremlin {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState defaultValue='Default value'>
+        <TextareaGremlin {...args} />
+      </TextareaState>
+    </form>
   )
 }
 

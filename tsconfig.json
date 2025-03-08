@@ -1,21 +1,55 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
     "allowJs": true,
-    "checkJs": false,
+    "checkJs": true,
     "noEmit": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
-    "baseUrl": "."
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "#gremlins": [
+        "src/js/index.cjs",
+        "src/js/index.mjs"
+      ],
+      "#gremlins/components": [
+        "src/js/components/index.cjs",
+        "src/js/components/index.mjs"
+      ],
+      "#gremlins/components/*": [
+        "src/js/components/*/index.cjs"
+      ],
+      "#gremlins/gremlins": [
+        "src/js/gremlins/index.cjs"
+      ],
+      "#gremlins/gremlins/*": [
+        "src/js/gremlins/*/index.cjs"
+      ],
+      "#gremlins/super": [
+        "src/js/super/index.cjs",
+        "src/js/super/index.mjs"
+      ],
+      "#gremlins/super/components": [
+        "src/js/super/components/index.cjs",
+        "src/js/super/components/index.mjs"
+      ],
+      "#gremlins/super/components/*": [
+        "src/js/super/components/*/index.cjs"
+      ],
+      "#gremlins/super/gremlins": [
+        "src/js/super/gremlins/index.cjs"
+      ],
+      "#gremlins/super/gremlins/*": [
+        "src/js/super/gremlins/*/index.cjs"
+      ]
+    }
   },
   "include": [
-    ".",
-    "src/**/*",
-    "stories/**/*"
+    "."
   ],
   "exclude": [
+    ".storybook/**/*",
     "**/__tests__/**/*"
   ]
 }

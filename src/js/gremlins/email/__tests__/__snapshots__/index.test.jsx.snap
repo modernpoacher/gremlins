@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/gremlins/email <Gremlin /> With additional props Default value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <EmailField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue="MOCK DEFAULT VALUE"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="email"
+    />
+  </EmailField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/email <Gremlin /> With additional props Value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <EmailField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="email"
+      value="MOCK VALUE"
+    />
+  </EmailField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/email <Gremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <EmailField>
+    <input
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      type="email"
+      value=""
+    />
+  </EmailField>
+</div>
+`;

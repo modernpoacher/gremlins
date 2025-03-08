@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.GroupProps} GroupProps
+ */
+
 import React from 'react'
 
 import FieldsetGremlin from '@modernpoacher/gremlins/gremlins/fieldset'
@@ -31,73 +35,86 @@ export default {
   component: FieldsetGremlin
 }
 
+function HANDLE_EVENT () {
+  //
+}
+
+/**
+ *  @returns {React.JSX.Element}
+ */
 export function Default () {
   return (
-    <FieldsetGremlin>
-      <CheckboxState checked>
-        <CheckboxGremlin
-          id='checkbox'
-          name='checkbox'
-          value='value'
-        />
-      </CheckboxState>
-      <EmailState value='email@email.com'>
-        <EmailGremlin
-          id='email'
-          name='email'
-        />
-      </EmailState>
-      <NumberState value={1}>
-        <NumberGremlin
-          id='number'
-          name='number'
-        />
-      </NumberState>
-      <PasswordState value='password'>
-        <PasswordGremlin
-          id='password'
-          name='password'
-        />
-      </PasswordState>
-      <RadioState value='two'>
-        <RadioGremlin
-          id='radio-1'
-          name='radio'
-          value='one'
-        />
-        <RadioGremlin
-          id='radio-2'
-          name='radio'
-          value='two'
-        />
-        <RadioGremlin
-          id='radio-3'
-          name='radio'
-          value='three'
-        />
-      </RadioState>
-      <SelectState value='one'>
-        <SelectGremlin
-          id='select'
-          name='select'>
-          <option value='one'>One</option>
-          <option value='two'>Two</option>
-          <option value='three'>Three</option>
-        </SelectGremlin>
-      </SelectState>
-      <TextState value='Value'>
-        <TextGremlin
-          id='text'
-          name='text'
-        />
-      </TextState>
-      <TextareaState value='Value'>
-        <TextareaGremlin
-          id='textarea'
-          name='textarea'
-        />
-      </TextareaState>
-    </FieldsetGremlin>
+    <form>
+      <FieldsetGremlin>
+        <CheckboxState checked>
+          <CheckboxGremlin
+            id='checkbox'
+            name='checkbox'
+            value='value'
+            onClick={HANDLE_EVENT}
+          />
+        </CheckboxState>
+        <EmailState value='email@email.com'>
+          <EmailGremlin
+            id='email'
+            name='email'
+          />
+        </EmailState>
+        <NumberState value={1}>
+          <NumberGremlin
+            id='number'
+            name='number'
+          />
+        </NumberState>
+        <PasswordState value='password'>
+          <PasswordGremlin
+            id='password'
+            name='password'
+          />
+        </PasswordState>
+        <RadioState value='two'>
+          <RadioGremlin
+            id='radio-1'
+            name='radio'
+            value='one'
+            onClick={HANDLE_EVENT}
+          />
+          <RadioGremlin
+            id='radio-2'
+            name='radio'
+            value='two'
+            onClick={HANDLE_EVENT}
+          />
+          <RadioGremlin
+            id='radio-3'
+            name='radio'
+            value='three'
+            onClick={HANDLE_EVENT}
+          />
+        </RadioState>
+        <SelectState value='one'>
+          <SelectGremlin
+            id='select'
+            name='select'>
+            <option value='one'>One</option>
+            <option value='two'>Two</option>
+            <option value='three'>Three</option>
+          </SelectGremlin>
+        </SelectState>
+        <TextState value='Value'>
+          <TextGremlin
+            id='text'
+            name='text'
+          />
+        </TextState>
+        <TextareaState value='Value'>
+          <TextareaGremlin
+            id='textarea'
+            name='textarea'
+          />
+        </TextareaState>
+      </FieldsetGremlin>
+    </form>
   )
 }
 

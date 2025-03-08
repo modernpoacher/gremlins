@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/components/group <Group /> With additional props matches the snapshot 1`] = `
+<fieldset
+  className="group"
+>
+  MOCK CHILDREN
+</fieldset>
+`;
+
+exports[`#gremlins/components/group <Group /> With required props matches the snapshot 1`] = `null`;

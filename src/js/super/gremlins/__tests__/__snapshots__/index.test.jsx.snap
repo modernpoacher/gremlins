@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/super/gremlins <FieldGremlin /> With additional props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Field>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="input"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value="MOCK VALUE"
+    />
+  </Field>
+</div>
+`;
+
+exports[`#gremlins/super/gremlins <FieldGremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Field>
+    <input
+      className="input"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+    />
+  </Field>
+</div>
+`;
+
+exports[`#gremlins/super/gremlins <GroupGremlin /> With additional props matches the snapshot 1`] = `
+<div
+  className="gremlin"
+>
+  <Group>
+    <fieldset
+      className="group"
+    >
+      MOCK CHILDREN
+    </fieldset>
+  </Group>
+</div>
+`;
+
+exports[`#gremlins/super/gremlins <GroupGremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="gremlin"
+>
+  <Group />
+</div>
+`;

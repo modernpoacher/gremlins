@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import TextGremlin from '@modernpoacher/gremlins/gremlins/text'
@@ -14,11 +18,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <TextState value='Value'>
-      <TextGremlin {...args} />
-    </TextState>
+    <form>
+      <TextState value='Value'>
+        <TextGremlin {...args} />
+      </TextState>
+    </form>
   )
 }
 
@@ -32,11 +42,17 @@ Value.args = {
   name: 'text'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <TextState defaultValue='Default value'>
-      <TextGremlin {...args} />
-    </TextState>
+    <form>
+      <TextState defaultValue='Default value'>
+        <TextGremlin {...args} />
+      </TextState>
+    </form>
   )
 }
 

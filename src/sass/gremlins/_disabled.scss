@@ -1,0 +1,15 @@
+@use "design-system/palette";
+@use "design-system/typography";
+
+@mixin gremlin-disabled {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    border-color: palette.$disabled;
+    color: palette.$disabled;
+  }
+}
+
+%gremlin-disabled {
+  @include gremlin-disabled;
+}

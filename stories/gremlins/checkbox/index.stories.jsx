@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.CheckProps} CheckProps
+ */
+
 import React from 'react'
 
 import CheckboxGremlin from '@modernpoacher/gremlins/gremlins/checkbox'
@@ -14,17 +18,21 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
-    <CheckboxState checked>
-      <CheckboxGremlin {...args} value='value' />
-    </CheckboxState>
+    <form>
+      <CheckboxState checked>
+        <CheckboxGremlin {...args} value='value' />
+      </CheckboxState>
+    </form>
   )
 }
 
 Checked.args = {
-  title: 'Title',
-  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
@@ -34,17 +42,21 @@ Checked.args = {
   name: 'checkbox'
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
-    <CheckboxState defaultChecked>
-      <CheckboxGremlin {...args} value='value' />
-    </CheckboxState>
+    <form>
+      <CheckboxState defaultChecked>
+        <CheckboxGremlin {...args} value='value' />
+      </CheckboxState>
+    </form>
   )
 }
 
 DefaultChecked.args = {
-  title: 'Title',
-  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,

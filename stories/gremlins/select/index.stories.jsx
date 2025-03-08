@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import SelectGremlin from '@modernpoacher/gremlins/gremlins/select'
@@ -14,15 +18,21 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <SelectState value='one'>
-      <SelectGremlin {...args}>
-        <option value='one'>One</option>
-        <option value='two'>Two</option>
-        <option value='three'>Three</option>
-      </SelectGremlin>
-    </SelectState>
+    <form>
+      <SelectState value='one'>
+        <SelectGremlin {...args}>
+          <option value='one'>One</option>
+          <option value='two'>Two</option>
+          <option value='three'>Three</option>
+        </SelectGremlin>
+      </SelectState>
+    </form>
   )
 }
 
@@ -36,15 +46,21 @@ Value.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <SelectState defaultValue='one'>
-      <SelectGremlin {...args}>
-        <option value='one'>One</option>
-        <option value='two'>Two</option>
-        <option value='three'>Three</option>
-      </SelectGremlin>
-    </SelectState>
+    <form>
+      <SelectState defaultValue='one'>
+        <SelectGremlin {...args}>
+          <option value='one'>One</option>
+          <option value='two'>Two</option>
+          <option value='three'>Three</option>
+        </SelectGremlin>
+      </SelectState>
+    </form>
   )
 }
 
@@ -58,18 +74,24 @@ DefaultValue.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function MultipleValue (args) {
   return (
-    <SelectState value={['one', 'three']}>
-      <SelectGremlin multiple {...args}>
-        <option value='one'>One</option>
-        <option value='two'>Two</option>
-        <option value='three'>Three</option>
-        <option value='four'>Four</option>
-        <option value='five'>Five</option>
-        <option value='six'>Six</option>
-      </SelectGremlin>
-    </SelectState>
+    <form>
+      <SelectState value={['one', 'three']}>
+        <SelectGremlin multiple {...args}>
+          <option value='one'>One</option>
+          <option value='two'>Two</option>
+          <option value='three'>Three</option>
+          <option value='four'>Four</option>
+          <option value='five'>Five</option>
+          <option value='six'>Six</option>
+        </SelectGremlin>
+      </SelectState>
+    </form>
   )
 }
 
@@ -83,18 +105,24 @@ MultipleValue.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function MultipleDefaultValue (args) {
   return (
-    <SelectState defaultValue={['one', 'three']}>
-      <SelectGremlin multiple {...args}>
-        <option value='one'>One</option>
-        <option value='two'>Two</option>
-        <option value='three'>Three</option>
-        <option value='four'>Four</option>
-        <option value='five'>Five</option>
-        <option value='six'>Six</option>
-      </SelectGremlin>
-    </SelectState>
+    <form>
+      <SelectState defaultValue={['one', 'three']}>
+        <SelectGremlin multiple {...args}>
+          <option value='one'>One</option>
+          <option value='two'>Two</option>
+          <option value='three'>Three</option>
+          <option value='four'>Four</option>
+          <option value='five'>Five</option>
+          <option value='six'>Six</option>
+        </SelectGremlin>
+      </SelectState>
+    </form>
   )
 }
 

@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/gremlins/checkbox <Gremlin /> With additional props Checked is a boolean matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      checked={true}
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+    <label
+      htmlFor="MOCK ID"
+    >
+      ​
+    </label>
+  </CheckboxField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/checkbox <Gremlin /> With additional props Default checked is a boolean matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultChecked={true}
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+    <label
+      htmlFor="MOCK ID"
+    >
+      ​
+    </label>
+  </CheckboxField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/checkbox <Gremlin /> With additional props Default checked is a boolean matches the snapshot 2`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultChecked={true}
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+    <label
+      htmlFor="MOCK ID"
+    >
+      ​
+    </label>
+  </CheckboxField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/checkbox <Gremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+    <label
+      htmlFor="MOCK NAME"
+    >
+      ​
+    </label>
+  </CheckboxField>
+</div>
+`;

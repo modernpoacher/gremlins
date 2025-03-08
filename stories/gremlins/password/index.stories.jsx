@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import PasswordGremlin from '@modernpoacher/gremlins/gremlins/password'
@@ -14,11 +18,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <PasswordState value='password'>
-      <PasswordGremlin {...args} />
-    </PasswordState>
+    <form>
+      <PasswordState value='password'>
+        <PasswordGremlin {...args} />
+      </PasswordState>
+    </form>
   )
 }
 
@@ -32,11 +42,17 @@ Value.args = {
   name: 'password'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <PasswordState defaultValue='password'>
-      <PasswordGremlin {...args} />
-    </PasswordState>
+    <form>
+      <PasswordState defaultValue='password'>
+        <PasswordGremlin {...args} />
+      </PasswordState>
+    </form>
   )
 }
 

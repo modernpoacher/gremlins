@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import NumberGremlin from '@modernpoacher/gremlins/gremlins/number'
@@ -14,11 +18,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <NumberState value={1}>
-      <NumberGremlin {...args} />
-    </NumberState>
+    <form>
+      <NumberState value={1}>
+        <NumberGremlin {...args} />
+      </NumberState>
+    </form>
   )
 }
 
@@ -32,11 +42,17 @@ Value.args = {
   name: 'number'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <NumberState defaultValue={1}>
-      <NumberGremlin {...args} />
-    </NumberState>
+    <form>
+      <NumberState defaultValue={1}>
+        <NumberGremlin {...args} />
+      </NumberState>
+    </form>
   )
 }
 

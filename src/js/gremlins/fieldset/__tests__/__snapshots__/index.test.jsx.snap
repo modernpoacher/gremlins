@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/gremlins/fieldset <Gremlin /> With additional props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <FieldsetGroup>
+    <fieldset
+      className="MOCK CLASSNAME"
+    >
+      MOCK CHILDREN
+    </fieldset>
+  </FieldsetGroup>
+</div>
+`;
+
+exports[`#gremlins/gremlins/fieldset <Gremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <FieldsetGroup />
+</div>
+`;

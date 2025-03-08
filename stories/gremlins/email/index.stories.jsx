@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import EmailGremlin from '@modernpoacher/gremlins/gremlins/email'
@@ -14,11 +18,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <EmailState value='email@email.com'>
-      <EmailGremlin {...args} />
-    </EmailState>
+    <form>
+      <EmailState value='email@email.com'>
+        <EmailGremlin {...args} />
+      </EmailState>
+    </form>
   )
 }
 
@@ -32,11 +42,17 @@ Value.args = {
   name: 'email'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <EmailState defaultValue='email@email.com'>
-      <EmailGremlin {...args} />
-    </EmailState>
+    <form>
+      <EmailState defaultValue='email@email.com'>
+        <EmailGremlin {...args} />
+      </EmailState>
+    </form>
   )
 }
 

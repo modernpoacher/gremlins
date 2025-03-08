@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#gremlins/gremlins/select <Gremlin /> With additional props Multiple is not true Default value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue="MOCK DEFAULT VALUE"
+      disabled={true}
+      id="MOCK ID"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/select <Gremlin /> With additional props Multiple is not true Value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value="MOCK VALUE"
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/select <Gremlin /> With additional props Multiple is true Default value is an array matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue={
+        [
+          "MOCK DEFAULT VALUE",
+        ]
+      }
+      disabled={true}
+      id="MOCK ID"
+      multiple={true}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/select <Gremlin /> With additional props Multiple is true Value is an array matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      multiple={true}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value={
+        [
+          "MOCK VALUE",
+        ]
+      }
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#gremlins/gremlins/select <Gremlin /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectField>
+    <select
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+  </SelectField>
+</div>
+`;

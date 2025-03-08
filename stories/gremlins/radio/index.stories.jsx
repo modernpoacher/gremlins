@@ -1,3 +1,7 @@
+/**
+ *  @typedef {GremlinsTypes.Gremlins.CheckProps} CheckProps
+ */
+
 import React from 'react'
 
 import RadioGremlin from '@modernpoacher/gremlins/gremlins/radio'
@@ -14,31 +18,35 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
-    <RadioState value='two' checked>
-      <RadioGremlin
-        {...args}
-        id='radio-a'
-        value='one'
-      />
-      <RadioGremlin
-        {...args}
-        id='radio-b'
-        value='two'
-      />
-      <RadioGremlin
-        {...args}
-        id='radio-c'
-        value='three'
-      />
-    </RadioState>
+    <form>
+      <RadioState value='two' checked>
+        <RadioGremlin
+          {...args}
+          id='radio-a'
+          value='one'
+        />
+        <RadioGremlin
+          {...args}
+          id='radio-b'
+          value='two'
+        />
+        <RadioGremlin
+          {...args}
+          id='radio-c'
+          value='three'
+        />
+      </RadioState>
+    </form>
   )
 }
 
 Checked.args = {
-  title: 'Title',
-  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
@@ -48,31 +56,35 @@ Checked.args = {
   name: 'radio'
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
-    <RadioState value='two' defaultChecked>
-      <RadioGremlin
+    <form>
+      <RadioState value='two' defaultChecked>
+        <RadioGremlin
         {...args}
         id='radio-1'
         value='one'
       />
-      <RadioGremlin
+        <RadioGremlin
         {...args}
         id='radio-2'
         value='two'
       />
-      <RadioGremlin
+        <RadioGremlin
         {...args}
         id='radio-3'
         value='three'
       />
-    </RadioState>
+      </RadioState>
+    </form>
   )
 }
 
 DefaultChecked.args = {
-  title: 'Title',
-  description: 'Description',
   required: false,
   disabled: false,
   readOnly: false,
