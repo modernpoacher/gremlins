@@ -77,8 +77,8 @@
     "@types/prop-types": "^15.7.14",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
-    "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "@typescript-eslint/parser": "^8.29.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
     "autoprefixer": "^10.4.21",
     "chai": "^5.2.0",
     "core-js": "^3.41.0",
@@ -112,7 +112,7 @@
     "stylelint": "^16.18.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-scss": "^6.11.1",
-    "webpack": "^5.98.0",
+    "webpack": "^5.99.1",
     "webpack-cli": "^6.0.1"
   },
   "imports": {
