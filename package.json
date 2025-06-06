@@ -110,6 +110,9 @@
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   },
+  "overrides": {
+    "storybook": "$storybook"
+  },
   "imports": {
     "#gremlins": {
       "require": "./src/js/index.cjs",
@@ -161,8 +164,5 @@
     "./super/components/*": "./src/js/super/components/*/index.cjs",
     "./super/gremlins": "./src/js/super/gremlins/index.cjs",
     "./super/gremlins/*": "./src/js/super/gremlins/*/index.cjs"
-  },
-  "overrides": {
-    "storybook": "$storybook"
   }
 }
