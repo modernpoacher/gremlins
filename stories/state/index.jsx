@@ -37,10 +37,15 @@ export class ValueState extends State {
     )
   }
 
-  mapChildren (children, props = {}) {
+  /**
+   * @param {any} children
+   * @param {Record<PropertyKey, unknown>} props
+   * @returns {any}
+   */
+  mapChildren (children, props) {
     return Children.map(children, (child) => {
       const {
-        props: PROPS = {},
+        props: PROPS,
         props: {
           children: CHILDREN
         } = {}
@@ -63,26 +68,38 @@ export class ValueState extends State {
     if (this.hasDefaultValue()) {
       const { defaultValue } = this.state
 
+      /**
+       * @param {unknown} value
+       */
+      function onChange (value) { log(value) }
+
       return this.mapChildren(
         children,
         {
           ...props,
           defaultValue,
-          onChange: (value) => { log(value) }
+          onChange
         }
       )
     }
 
     const { value } = this.state
 
+    /**
+     * @param {unknown} value
+     */
+    const onChange = (value) => {
+      this.setState({ value }, function onStateChange () {
+        log(value)
+      })
+    }
+
     return this.mapChildren(
       children,
       {
         ...props,
         value,
-        onChange: (value) => {
-          this.setState({ value }, () => { log(value) })
-        }
+        onChange
       }
     )
   }
@@ -99,6 +116,11 @@ export class CheckState extends State {
     )
   }
 
+  /**
+   * @param {any} children
+   * @param {Record<PropertyKey, unknown>} props
+   * @returns {any}
+   */
   mapChildren (children, props) {
     return Children.map(children, (child) => {
       const {
@@ -121,26 +143,42 @@ export class CheckState extends State {
     if (this.hasDefaultChecked()) {
       const { defaultChecked } = this.state
 
+      /**
+       * @param {unknown} value
+       * @param {boolean} checked
+       */
+      function onChange (value, checked) {
+        log(value, checked)
+      }
+
       return this.mapChildren(
         children,
         {
           ...props,
           defaultChecked: !!defaultChecked,
-          onChange: (value, checked) => { log(value, checked) }
+          onChange
         }
       )
     }
 
     const { checked } = this.state
 
+    /**
+     * @param {unknown} value
+     * @param {boolean} checked
+     */
+    const onChange = (value, checked) => {
+      this.setState({ value, checked }, function onStateChange () {
+        log(value, checked)
+      })
+    }
+
     return this.mapChildren(
       children,
       {
         ...props,
         checked: !!checked,
-        onChange: (value, checked) => {
-          this.setState({ value, checked }, () => { log(value, checked) })
-        }
+        onChange
       }
     )
   }
@@ -157,13 +195,19 @@ export class RadioState extends State {
     )
   }
 
+  /**
+   * @param {any} children
+   * @param {Record<PropertyKey, unknown>} props
+   * @param {Record<PropertyKey, unknown>} state
+   * @returns {any}
+   */
   mapDefaultChildren (children, props, { defaultChecked, value /* State value */ } = {}) {
     return Children.map(children, (child) => {
       const {
         props: PROPS,
         props: {
           value: VALUE /* Component value */
-        }
+        } = {}
       } = child
 
       return cloneElement(
@@ -178,13 +222,19 @@ export class RadioState extends State {
     })
   }
 
+  /**
+   * @param {any} children
+   * @param {Record<PropertyKey, unknown>} props
+   * @param {Record<PropertyKey, unknown>} state
+   * @returns {any}
+   */
   mapChildren (children, props, { checked, value /* State value */ } = {}) {
     return Children.map(children, (child) => {
       const {
         props: PROPS,
         props: {
           value: VALUE /* Component value */
-        }
+        } = {}
       } = child
 
       return cloneElement(
@@ -205,11 +255,19 @@ export class RadioState extends State {
     if (this.hasDefaultChecked()) {
       const { value, defaultChecked = false } = this.state
 
+      /**
+       * @param {unknown} value
+       * @param {boolean} checked
+       */
+      function onChange (value, checked) {
+        log(value, checked)
+      }
+
       return this.mapDefaultChildren(
         children,
         {
           ...props,
-          onChange: (value, checked) => { log(value, checked) }
+          onChange
         },
         {
           value,
@@ -220,13 +278,21 @@ export class RadioState extends State {
 
     const { value, checked = false } = this.state
 
+    /**
+     * @param {unknown} value
+     * @param {boolean} checked
+     */
+    const onChange = (value, checked) => {
+      this.setState({ value, checked }, function onStateChange () {
+        log(value, checked)
+      })
+    }
+
     return this.mapChildren(
       children,
       {
         ...props,
-        onChange: (value, checked) => {
-          this.setState({ value, checked }, () => { log(value, checked) })
-        }
+        onChange
       },
       {
         value,

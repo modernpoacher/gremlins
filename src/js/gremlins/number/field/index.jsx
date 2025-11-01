@@ -1,6 +1,6 @@
 /**
- *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
- *  @typedef {CogsTypes.Components.Field.Number.NumberProps} NumberProps
+ *  @typedef {GremlinsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {GremlinsTypes.Components.Field.Number.NumberProps} NumberProps
  */
 
 /**

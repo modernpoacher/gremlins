@@ -33,7 +33,6 @@ export default class Radio extends CheckGremlin {
   }
 
   /**
-   *  @param {string} name
    *  @param {string | string[]} [value]
    *  @param {boolean} [checked]
    */
@@ -46,7 +45,6 @@ export default class Radio extends CheckGremlin {
   }
 
   /**
-   *  @param {string} name
    *  @param {string | string[]} [value]
    *  @param {boolean} [checked]
    */
