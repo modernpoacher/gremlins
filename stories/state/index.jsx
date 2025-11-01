@@ -161,7 +161,7 @@ export class CheckState extends State {
       )
     }
 
-    const { checked } = this.state
+    const { checked = false } = this.state
 
     /**
      * @param {unknown} value
