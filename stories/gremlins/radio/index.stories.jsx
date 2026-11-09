@@ -65,20 +65,20 @@ export function DefaultChecked (args) {
     <form>
       <RadioState value='two' defaultChecked>
         <RadioGremlin
-        {...args}
-        id='radio-1'
-        value='one'
-      />
+          {...args}
+          id='radio-1'
+          value='one'
+        />
         <RadioGremlin
-        {...args}
-        id='radio-2'
-        value='two'
-      />
+          {...args}
+          id='radio-2'
+          value='two'
+        />
         <RadioGremlin
-        {...args}
-        id='radio-3'
-        value='three'
-      />
+          {...args}
+          id='radio-3'
+          value='three'
+        />
       </RadioState>
     </form>
   )
